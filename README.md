@@ -1,3 +1,3 @@
-# About me
+# About
 
-This is the repository from the manuscript *Lighting up boulder reefs: influence of fluorescent substrates on biofluorescent chitons distribution*
+This is the repository for the manuscript: "*Lighting up boulder reefs: Influence of fluorescent substrates on the distribution of  biofluorescent chitons.*
