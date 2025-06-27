@@ -16,6 +16,9 @@ csl: csl_ecology.csl
 
 *TITLE:* Lighting up boulder reefs: Influence of fluorescent substrates on the distribution of biofluorescent chitons.
 
+*RUNNING TITLE:*
+
+
 *AUTHOR AND AFFILIATIONS:*
 
 Guido G Grimaldi* (Orchid: 0000-0002-6947-1957). Postgraduate Program of Ecology, Federal University of Santa Catarina, Florianopolis, Santa Catarina, Brazil, 88040-970. guidogrimaldi@gmail.com.
@@ -126,249 +129,39 @@ The IPCC Sixth Assessment Report confirms with “high confidence” that seawat
 Boulder reefs are highly complex and dynamic ecosystems, characterized by their inherent instability and intricate ecological interactions. Understanding the relationships that underspin these environments is crucial for predicting how they will respond to future scenarios of global change. In this study, we investigated a biofluorescent chiton species and its association with substrate coverage on the sides of its boulder habitats. Our find reveals a direct correlation between chiton abundance and the coverage of fluorescent substrates and bryozoans. Furthermore, we explore the possibility that the chiton-red crust algae association extends beyond a simple trophic interaction, potentially involving visual aspects enhanced by fluorescence. Fluorescence may play a critical role in communication, habitat selection, and predator-prey dynamics, suggesting it could have significant ecological implications. Investigating how these visual processes are shaped by environmental changes provides valuable insights into the broader ecological consequences of global change. By exploring these connections, researchers can uncover how climate-induced disruptions shape the structure and resilience of boulder reef ecosystems, offering guidance for their conservation in an era of rapid change.
 
 
-**Significance statement (if applicable)**
+**Acknowledgements:** We thank to Olyana Furtado, Ivon Lima, Giselle Reis, Erika Beux, and two anonymous volunteers for their support during field data collection. We also extend our gratitude to the anonymous reviewers for their thoughtful comments on the original manuscript. Additionally, we are grateful to Ms. Noëlle Lechat and Mr. Serge Guerrero for their hospitality, generosity, and logistical support during the field study, as well as their dedication to supporting scientific research.
 
-**Data Availability**
+**Funding statement:** This work was supported by funding from the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) through a doctorate scholarship (88887497855202000).
 
-**Conflict of interest statement**
+**Data Availability:** The data and code used to produce the results in this study are available at: https://github.com/GuidoGrimaldi/Chiton-Ecology.git
 
-All authors declare no competing interests.
+**Conflict of interest statement:** All authors declare no competing interests.
 
-**Ethics statement (if applicable)**
+**Ethics statement:** This study was exempted by the Animal Use Ethic Committee of Federal University of Santa Catarina in accordance with Brazilian federal legislation (n°11.794, October 8, 2008). The field site is publicly accessible, and no additional licenses were required.
 
-This study was exempted by the Animal Use Ethic Committee of Federal University of Santa Catarina in accordance with Brazilian federal legislation (n°11.794, October 8, 2008). The field site is publicly accessible, and no additional licenses were required.
+**Author Contributions:** G.G.G.: Conceptualization, methodology, software, validation, formal analysis, investigation, resource, data curation, visualization, original draft, review & editing, project administration. R.S.G.: investigation. B.V.C.G.: investigation. L.P.R.F.C.S.F.: investigation. A.C.D.L.: investigation. G.C.S.P.: visualization. L.C.P.: formal analysis, validation, visualization. D.M.A.P.: resource; supervision; original draft; review & editing. P.A.H.: resource; supervision; original draft; review & editing. All authors approved the final version of the manuscript.
 
-**Funding statement (if applicable)**
-
-This work was supported by funding from the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) through a doctorate scholarship (88887497855202000).
-
-**Acknowledgements**
-
-# Teaser Text
-
-**Author Contributions**
-
-**Supporting Information**
 
 # References
 <div id="refs"></div>
 
-# Figures and tables with captions.
+# Figures
 
-# Glossary
 
-+ **acidification.** The process of soil or water becoming more
-acidic, with a loss of base cations (calcium, magnesium,
-potassium) and an increase in hydrogen and aluminum ion
-concentrations
+# Figure legends
 
-+ Association Term used for a wide range of situations
-where different species occur together.
+Figure 1: Study localities in northern Brazil. At each site, an equal number of samples (circles) were randomly distributed across the boulder zones of intertidal reefs, recording the presence (red) or absence (white) of chitons of each boulder.
 
-+ Adaptation Change in the genetic structure of a population due to natural selection, which leads to an improvement in
-function in relationship to the environment (encyeco)
 
-Adaptation The process, driven by natural selection, whereby species or populations become better suited to the environment.
-It takes place over generations and results in an increase in those genes (or alleles) that allow individuals in a population to
-better survive and reproduce in an environment [ecncy aim beha]
+Figure 2: Predicted chiton abundance as a function of fluorescent substrate cover (%). The blue line shows model predictions, the shaded area represents the 95% confidence interval, and gray dots indicate observed data. The model suggests a positive association, with abundance increasing at higher cover levels.
 
-adaptation A trait that results in the highest fitness among a specified set of behaviors
-in a particular environment. Adaptations are typically the result of the process of
-natural selection.(dugatkin2019animal beha)
 
-+ Aposematism A warning signal present in some species,
-directed to predators, that informs them about the unpalability or unprofitability of the aposematic individual. EN eco
+# Table legends
 
-Aposematic Describing an organism that is rendered less
-susceptible to predation by advertising its obvious
-unpalatability. [encbio]
+Table 1: Summary of key descriptive results by sites. Values (mean $\pm$ SD).
 
-+ **background.** refers to the environmental or contextual visual information that surrounds a focal object or subject in a scene. It includes elements such as textures, colors, patterns, and objects in the periphery, which can affect perception, attention, and behavior in organisms. 
 
-+ **benthic.** the community of organisms living on, near,attached to the sea floor, as opposed to floating in the water.
+Table 2: Results from Dunn’s Kruskal-Wallis Multiple comparison post-hoc test with Bonferroni correction. Site sharing the same letter are not significantly different (p<0.05).
 
-+ **bioluminescence.** light generated by an enzymatic reaction (luciferase) within a living organism.
 
-+ **biofouling.** the growth of epibionts on the surface of a host. {AINDA NAO}
-
-+ **boulder dwellers.** a diverse group of sessile and mobile organisms that inhabit various parts of boulders, including crevices, holes, and the upper, side, and undersides surfaces.
-
-+ **boulder habitat.** is an ecological environment formed by boulders, providing a variety of microhabitats that support diverse communities of organisms. It plays a crucial role in promoting biodiversity by creating niches for different species to thrive.
-
-+ **boulder reefs.** *to be defined*
-
-+ **brightness.** refers to the perceived amount of light a given surface seems to emit or reflect [@vandenberg2020].
-
-+ **calcified.** incorporating or coated with calcium carbonate (limestone), resulting in a hardened structure.
-
-+ **coralline.** a type of algae in the order *Corallinales*, characterized by cell walls that contain calcium carbonate, giving them a hard, calcified structure. Typically pink or reddish in color.
-
-+ **crust.** It is a flat growth form with one whole side attached to the
-substratum, growing outward as a laterally expanding disk.
-
-+ **crustose.** growing as a crust, prostrate along the substratum.
-
-+ **cue.** an incidental source of information that may influence the behavior of a receiver, despite not having evolved under selection for that purpose [@stevens2013].
-
-+ **communication.** The transfer of information from a signaler to a receiver.[dugaktin2019]
-
-
-+ Dispersal Individuals or populations (or parts of populations) that move to reach new areas, but do not return.
-
-+ Disturbance Any temporary change in average environmental conditions severely disrupting an ecological population or community, such as fire, flood, ice-scouring; such
-events create open space, available for colonization. [enc.eco]
-
-disturbance The injury, displacement, or mortality of
-organisms caused by an external physical or biological
-agent (other than predation). [enc.tide]
-
-+ Disturbance regime The nature, frequency and intensity
-of events or agents that cause a temporary or permanent
-loss of biomass [enc.bio]
-
-+ Ecosystem A community of living things and the biophysical environment in which they interact, including
-genetic, physiological, morphological, population, energyflow, and nutrient-cycling characteristics of living things. [enc.eco]
-
-ecosystem An ecological system comprising an assemblage
-of organisms living together with their environment.[enc.tide]
-
-Ecosystem A community of organisms (plants, animals,
-and microbes) and their physical environment interacting
-as an ecological unit, such as a lake, a wetland, a forest, or
-an agricultural landscape [enc.biodiv]
-
-+ Fitness The ability of an individual to survive and reproduce in its environment.
-Fitness The fitness of an individual is the proportion of the individual’s genes, or more correctly alleles, that are passed on to
-the following generations.[ ency anim beha]
-
-Fitness A description of an individual’s reproductive success, fitness is the average contribution to the gene pool of the next
-generation that is made by individuals of the specific genotype or phenotype. [enc.an.beha]
-
-fitness The evolutionary success of an individual, measured as the probability that its alleles are passed on to
-the next generation. [ecn.tide]
-
-+ **foraging.** feeding and all behaviors associated with feeding [duga2019].
-
-+ **habitat.** Location, at a particular scale of space and time, where an organism is able to conduct activities, actually lives, or potentially lives (adapted from Kearney, 2006).
-
-Habitat Space characterized by distinct environmental characteristics and that is associated with the presence of a particular
-species or community, or where a particular species or community could be found
-
-Habitat The living area of a species (plant, animal or
-microorganism)
-
-Habitat The natural environment in which an organism lives
-
-+ **habitat quality.** *to be defined*
-
-+ **habitat specialist.** *to be defined*
-
-+ **habitat use.** *to be defined*
-
-+ **information.** Acquired by organisms from the general environment or from other individuals and reduces uncertainty about a feature or state of the environment, individual, or future events [@stevens2013]. 
-
-Information Data that, when acquired, reduces an animal’s uncertainty about environmental or social conditions [enc.an.beh]
-
-+ Intertidal zone The area on the coast that lies between the
-low-tide and the high-tide marks.(enc.eco)
-
-+ **intertidal.** part of the coast that is covered by water at high tide but exposed to air at low tide.
-
-+ Landscape The composition of an area of land including
-all of its elements and their spatially-explicit layout. An
-analogous term is a seascape for seas
-
-+ larva: Larva/planula larva Free living soft-bodied embryo that settles on a solid substratum and forms a primary polyp[ ec.modercoralreef]
-
-+ **mate choice.** any behavior that restricts the set of potential mates [enc.an.beh].
-
-+ **microhabitat.** An area used for a specific type of activity (e.g., foraging, oviposition, nesting).
-
-Microhabitat Small-scale habitat within which an
-organism or community exists. [enc biodi]
-
-+ Migration Individuals or populations (or parts of populations) that move between two well-defined habitats on a
-temporally predictable basis.
-
-
-+ Multimodal: Multicomponent Signal Is made up of independent components that share physical properties and are processed by a shared
-sensory organ – e.g., dynamic movements of brightly colored appendages detected by eyes.
-Multimodal Signaling Involves the incorporation of signals across multiple sensory modalities into communication displays.
-Redundancy Is a systems design principle referring to system components with shared structure and shared function.
-
-
-+ Niche A role (position) that a species plays in the environment, the status of an organism within its environment
-which affects its survival.
-
-niche The environmental space (biological and physical)
-within which a species can survive and reproduce. [ecn.tie]
-
-Niche The unique position occupied by a particular
-species in terms of the function that it performs within the
-community [enc.biodo]
-
-+ "Ontogeny The development or course of development
-especially of an individual organism.
-Ontogenetic Associated with growth and development of an individual.encanbeha
-
-+ **optical properties.** *to be defined*
-
-+ **pattern.** Regularity in what we observe in nature, or in other words ‘widely observable tendencies’ (Lawton 1999).
-
-+ pacth:... Patch dynamics An ecological concept according to which
-communities consist of a mosaic of patches, that is, discrete
-areas of variable size, shape, composition, history, and
-disturbance regimes,
-
-+ Taxis: a directional response to a stimulus. In the case of a light stimulus, the response
-is called phototaxis.
-
-+ Population Group of individuals of the same species,
-occupying the same space and time.
-Population A collection of organisms of the same species
-living in close proximity
-
-+ Predation Interaction between two individuals, where one
-of the individuals benefits from the interaction (i.e., the
-predator) whereas the other is harmed (i.e., the prey). It
-includes the carnivory, herbivory, parasitism, parasitoidism,
-and pathogen–host interaction.
-
-predators Organisms that attack and eat other organisms.
-Predators typically kill and consume many prey during their
-development as larvae and as adults.
-
-predation A relationship between two individuals or species in which one consumes the other. Thus, PREDATOR.
-
-+ predation risk...construir Risk The possible loss of fitness resulting from uncertainty
-
-+ **Plankton Organisms that drift or float in the sea or
-freshwater. (ency eco)
-plankton Small-bodied animals (zooplankton) and plants
-(phytoplankton) that live suspended in the water column
-and are at the mercy of ocean currents for transport (i.e.,
-they cannot swim strongly). Thus, PLANKTONIC. [enc.tide]
-
-+ **process.** ‘A continuous and regular action or succession of actions occurring or performed in
-a definite manner, and having a particular result or outcome; a sustained operation or series of
-operations’ (Oxford University Press 2024).
-
-+ recruitment The input of new individuals into a population; in marine benthic communities, follows a period
-of settlement of larvae or propagules.
-
-+ rhythm A physiological or behavioral cycle that is timed
-endogenously by one or more clocks that approximate
-periodicities of environmental cycles.
-
-+ settlement The life phase characterized by the transition
-from a suspended larva to a site-attached adult
-
-+ **sensory environment**:
-
-+Sensory Modality Is used in reference to the combination of the physical form of the stimulus and the sensory system capable
-of its detection [enc.an.mod]
-
-+ **signal.** Any act or structure that influences the behavior of other organisms (receivers), and which evolved, via selection, specifically because of that effect [modified @stevens2013]. 
-
-+ **tapeta.** *to be defined*
-
+Table 3: Model selection results for chiton populations on boulders. Generalized linear mixed model (GLMM) were used to analyze the relationship between chitons abundance and substrate coverage percentages on the boulder’s sides, with separate considerations for fluorescent substrates and red crust algae. Models are ranked according to their ΔBIC value. Models in bold are the best fit.
