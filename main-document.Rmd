@@ -1,20 +1,54 @@
 ---
-title: "2.4_Main document"
+title: "main-document"
 author: "G.Grimaldi"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
-    toc: yes
+    toc: no
   html_document:
-    toc: yes
+    toc: no
   word_document:
-    toc: yes
-    reference: estilo.docx
+    toc: no
+    reference: stylo.docx
 bibliography: references.bib
 csl: csl_ecology.csl
 ---
 
-# **Lighting up Boulder Reefs: Influence of fluorescent substrates on chiton distribution**
+*TITLE:* Lighting up boulder reefs: Influence of fluorescent substrates on the distribution of biofluorescent chitons.
+
+*AUTHOR AND AFFILIATIONS:*
+
+Guido G Grimaldi* (Orchid: 0000-0002-6947-1957). Postgraduate Program of Ecology, Federal University of Santa Catarina, Florianopolis, Santa Catarina, Brazil, 88040-970. guidogrimaldi@gmail.com.
+
+
+Raiane dos Santos Guidi. (Orchid: 0000-0002-4901-5022). Laboratory of Sensory Ecology, Department of Physiology and Behavior, Federal University of Rio Grande do Norte, Natal, Rio Grande do Norte, Brazil, 59064-741. raianeguidi_13@hotmail.com.
+
+
+Bianca Villar Carvalho Guerreiro (Orchid: 0009-0000-2321-3330). Postgraduate Program of Ecology, Federal University of Rio Grande do Norte, Natal, Rio Grande do Norte, Brazil, 59064-741. bvcg13@gmail.com
+
+
+Luis Phelipe Rodrigues da Fonseca Campos e Silva Filho.
+Laboratory of Icthiology, Federal University of Rio Grande do Norte, Natal, Rio Grande do Norte, Brazil, 59014-002. lprfcsf19@gmail.com
+
+
+Amanda Cristina Dias de Lima. Oceânica – Pesquisa, Educação e Conservação, Parnamirim, Rio Grande do Norte, Brazil, 59161-487. amandaalga@gmail.com
+
+Luis Carlos-Pinto (Orchid: 0000-0003-4993-2901). Postgraduate Program of Ecology, Federal University of Santa Catarina, Florianopolis, Santa Catarina, Brazil, 88040-970. luismacedosoares@gmail.com
+
+
+Guilherme Cherem Schwarz Pierri (Orchid: *XXXXXXXX*). Santa Catarina State University, High Education Center of Southern Region, Laguna, Santa Catarina, Brazil, 88790-000. guilherme.pierri@udesc.br
+
+
+Daniel Marques Almeida Pessoa (Orchid: 0000-0002-2516-6766) Department Physiology and Animal Behavior, Federal University of Rio Grande do Norte, Natal, Rio Grande do Norte, Brazil, 59064-741. daniel.pessoa@ufrn.br.
+
+
+Paulo Antunes Horta (Orchid: 0000-0001-7699-7589). Department of Botany, Federal University of Santa Catarina, Florianópolis, Santa Catarina, Brazil, 88040-535 pauloantuneshorta@gmail.com.
+
+
+*Corresponding author*: Guido Grimaldi (guidogrimaldi@gmail.com).
+
+
+
 
 # **Abstract (250 words)**
 
