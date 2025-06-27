@@ -2,7 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-.csl
-.docx
-.tex
-.docx
+
+main-document.tex
+stylo.docx
+main-document.log
+csl_ecology.csl
