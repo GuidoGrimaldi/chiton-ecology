@@ -1,0 +1,362 @@
+---
+title: "2.4_Main document"
+author: "G.Grimaldi"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    toc: yes
+  word_document:
+    toc: yes
+    reference: estilo.docx
+bibliography: references.bib
+csl: csl_ecology.csl
+---
+
+# **Lighting up Boulder Reefs: Influence of fluorescent substrates on chiton distribution**
+
+# **Abstract (250 words)**
+
+# **Keywords**
+
+# **1. Introduction**
+
+Coastal reefs are facing unprecedented Anthropogenic driven threats to their continued existence as biodiverse and functional ecosystems upon which hundreds of millions of people rely [REF]. These include well-known systems like coral reefs, rocky shores, and seagrasses, along with lesser-known habitats such as rhodolith beds, sandstone reef, boulder fields, and others [REF]. Boulder reefs, also known as 'boulder fields', are a little-know marine systems that support biodiverse communities, including ecologically rare and habitat-specialist species [@liversage2018]. They are found in the nearshore and littoral zone all over the world [REF]. Geologically, a boulder is defined as a detached rock fragment (i.e. piece of stone) larger than 256 mm, regardless of shape [@wentworth1922]. However, when these loose rocks are submerged in natural aquatic environments, they can be colonized by various sessile benthic organisms [@wilson1987]. This is particularly interesting for ecology studies for two main reason: first, in aquatic environments hard substrate is limiting resource to encrusting and boring organisms, leading to space competition [REF]; second, individual boulders are discrete rocks and thus easily measurable [REF]. Additionally, they mobility allows them to be overturned by weather, creating disturbance within their communities [REF]. Evidence of this disturbance process is detectable even in the fossil record [REF]. In intertidal zones, these disturbances can include wave action [@sousa1979a], currents and storms [@li2023], and human activities [@stagnol2013], as well as microscale disturbance from wave-borne projectiles (e.g. logs, driftwood, pebbles, cobbles and even other boulders) and sand abrasion [@daly1977; @shanks1986]. The rate of boulder overturning depends on factors such as size, mass, shape, burial, orientation, and location [@mcguinness1987a; @lorang2000; @goto2010; @gomez-pazo2021]. Thus, the frequency of disturbance to which boulders are subjected, along with their intrinsic characteristics, causes boulder reefs to be spatially arranged as a mosaic of patches at various stages of community development over time [@osman1977; @sousa1984; @mcguinness1986]. This results in a highly dynamic, patchy, and unstable marine system.
+
+*Boulder dwellers* species are notably influenced by their ability to use sensory cues to assess *habitat quality*, for example, during larval settlement and spatial distribution [@silen1972; @svane1995; @sumner-rooney2020]. They are continuously immersed in physical and chemical properties, which we can observe as cues and signals that they used as source of information to establish ecological relationships and adapt to a changing world [@stevens2013; @delhey2017]. These processes are primarily mediated by the sensory system, which defines the boundaries of the organism's *sensory environments* [@krapp2008] and, ultimately, the boundaries of their *ecological niche* [@jaeger1978]. At a finer scale, factors like resource availability, reproductive needs, competition, predation risk, and disturbance regime may act as filters, favoring behaviors that allow individuals to select high-quality habitats for survival and reproduction [@kimirei2013; @majoris2018 @hyman2024]. These patterns of *habitat use* defines, at broader scales, the crucial areas for the population's long-term survival and reproduction, leading to spatial-temporal heterogeneity observed at the community level [@rosenzweig1987; @deangelis2014; @leibold2018]. In patchy landscapes such as boulder reefs, habitat specialists may choose habitats that maximize their fitness [@price2010; @rimmer2021]. Studies on larval settlement have shown that the spectral characteristics and brightness of substrates positively influence habitat selection in photosensitive planktonic larvae of various benthic invertebrates species [@satheesh2010; @mason2011; @ells2016]. As many shallow-water marine organisms are sensitive to light in at least one phase of their life cycle [@cronin2017; @marshall2017c], light has a central role in the bio-ecology of these species.
+
+Light energy is the driving force for most ecosystems and plays a fundamental role in numerous biological processes, including photosynthesis, photoperiodism, biological rhythms, phototaxis, and vision [@bjorn2015; @bhadra2017; @brelsford2019]. It also influences specie distribution, productivity, and ecological interactions [@floder2002; @cohen2002; @thrane2014] and acts as a selective pressure, driving evolutionary changes in behaviors, physiology, and morphology [@lahti2016; @rapf2016; @beckstead2016]. Its the interaction of light with matter that determines its availability and how effectively it can be utilized by living organisms [@brandbury2011]. For instance, the amount (photons number) and quality (wavelength or frequency) of sunlight that reaches the sea floor is influenced by factors like depth, sun position, phytoplankton concentration, suspended sediment, and dissolved organic matter [REF]. Similarly, the quality of light reaching visual pigments depends on the *optical properties* of  pre-retinal media (i.e. the cornea, lens, and aqueous and vitreous humors), as  well as specialized structures such as oil droplets and *tapeta* [@cronin2014]. The astonishing diversity of color patterns in nature arise from contrasts between color patches generated primarily by three processes: 1) selective absorption of pigments, 2) reflected light in structural mechanisms presented in the integument (i.e., structural colors), and 3) self-generated light via biochemical processes, known as *bioluminescence* [@cuthill2017; @schramm2024]. Many of these color patterns often serving as visual signals for socio-sexual signalling [@kato2024], camouflage [@cuthill2019a], aposematism [@caro2019a], or as visual cues for sheltering [@costa2023], foraging [@spaethe2001], and conspecific recognition [@silva2024]. Among pigments, fluorescent ones (i.e., fluorophores) have gained particular attention due to the increasing number of documented biofluorescent animals, including sponges [@read1968; @mazel2003b], corals [@eyal2015], hydrozoans [@maggioni2020], siphonophores [@haddock2015], planarians [@stubenhaus2016], worms [@mazel2003b], chitons [], bivalves [], seasnails [@williams2016], nudibranchs [@betti2021a], barnacles [@matsumura2014], crabs [@juhasz-dora2024], stomatopds [@mazel2004], tardigrades [@suma2020], insects [REF], spiders[@lim2007; @brandt2017], fish [@anthes2016; @sparks2014a], frogs [@taboada2017a], salamanders [@lamb2020a], turtles [@gruber2015a], geckos [@protzel2021], birds [@arnold2002; @wilkinson2019], and mammals [@olson2021a; @anich2021]. Fluorescent pigments can transfer energy across the optical spectrum, with emitted light typically having lower energy (i.e., longer wavelength) than absorbed light, thereby altering the spectral characteristics of the light [@johnsen2011]. Although fluorophores cannot add more energy to the system, they can add more photons, potentially enhancing the *brightness* of an organism's surface [@mazel2004; @montgomerie2006]. While debate remains about the visual role of biofluorescence [@iriel2010; @marshall2017; @mazel2017], some studies suggest it may enhance the intensity of visual signals, potentially influencing mate choice [@arnold2002; @mazel2004; @lim2007] and the settlement of planktonic larvae in marine benthic organisms [@matsumura2014]. 
+
+Chitons are multi-shelled mollusks that are strongly associated with hard marine substrates [@eernisse2007]. Their most remarkable feature is their eight-plate shell, equipped with various sensory receptors that are highly sensitive to light [@liu2022]. Some species even possess specialized 'shell eyes' capable of image formation and polarization vision [@speiser2011; @li2015; @chappell2023]. This sensory-integrated armor, shared by all modern chitons (dating back to the early Carboniferous ca. 340 Mya), closely resembles that of plate-bearing ancestral species from the early Cambrian ca. 540 Mya [@sigwart2009; @parkhaev2017]. This adaptation likely enabled chitons to survive major climate changes and Earth’s surface transformation throughout history [@wanninger2019], allowing them to inhabit a diverse range of environments today, from coastal areas to deep seas [Kangas and Shepherd 1984; Schwabe and Sellanes 2004; Konar et al. 2006; Saito et al. 2008; Barros et al. 2013; Reyes-Gómez et al. 2017; Sigwart 2017; Barboza 2019)]. Chitons also possess an iron-mineralized radula, which is use to scrape food from the substrates, ingesting various organisms and sediment particles [@fulton1975; @joester2016]. Consequently, many intertidal species can digest both plant and animal material, making them browsing omnivorous [@latyshev2004; @sigwart2017]. Ecologically, chitons play a role in regulating algal growth through grazing, while also unintentionally impact community diversity by creating a “bulldozing-effect” on larvae and post-metamorphic invertebrate stages, influencing community structure and composition [@aguilera2007; @aguilera2012; @aguilera2015; @liversage2019]. Boulder chitons are habitat specialist species that fully utilize the three-dimensional structure of their habitat [@liversage2017a]. Their behavior is influenced by both tidal and non-tidal rhythms, including the light-dark cycle, tidal regime, seasonal changes, climate and temperature variations, habitat features, food availability, and interactions with other species [@glynn1970; @kangas1984; @yoshioka2006; @ng2006]. These factors contribute to behavioral diversity across habitats and species  [@cretchley1997]. 
+
+Chitons are closely associated with red crust algae [@steneck1982a], relying on coralline crustose as a primary food source [@piercy1987; @littler1995; @camus2012] and larval settling surface [@barnes1973; @rumrill1983; @figueiredo1997;@roberts2010; @ritson-williams2014]. Red algae are easily recognized by their reddish hue, which primarily results from accessory pigments known as phycobilins [@lee2018]. These phycobiliproteins are highly fluorescent components of light-harvesting photosynthetic antenna complexes [@glazer1994]. In oceanic habitats, wavelength-dependent absorption  by water causes the broad-spectrum sunlight at the surface to narrow with increasing depth, shifting the ambient light spectrum toward blue [@cronin2014]. This environment condition favors fluorescence by providing suitable light to induce it while also enhancing potential visual functions [@anthes2016; @meadows2014]. Similarly, intertidal habitats may also experience a narrow "blue" light spectrum during twilight [@cronin2014]. A recent study has shown that the twilight spectrum plays an important role in anurans communication through biofluorescent signals in anurans [@whitcher2024a]. Many intertidal boulder chitons species are active during twlight, emerging at dawn or dusk to forage along the vertical surfaces [@langer1978]. The chiton *Ischnoplax pectinata* (G. B. Sowerby II, 1840) have an exclusive distribution in the West Atlantic, ranging in depth from 0 to 55 meters [@gomes2015]. Limited knowledge exists regarding their ecology and behavior, but they are commonly found in intertidal rocky reefs, specifically underneath loose boulders during low tide (Pers. Obs.). Apparently, the species exhibits fluorescence in its shell plates when artificially exposed to narrow light spectra [@grimaldi2023]. Research on the spatial distribution of boulder chitons has largely focused on the upper and lower surfaces of boulders [@evans1951; @kangas1984; @smith1997; @grayson2004; @mcclintock2007; @chapman2012; @liversage2017a]. In boulder habitats, red crust algae typically growth around the edge of boulders [@liversage2016]. This has led to the hypothesis that individuals may be more commonly found in boulders with higher fluorescent coverage along the sides, which could provide both a food source and a visual *background* for camouflage against visually guided predators [@sigwart2018].
+
+In this study, we investigate whether the coverage of fluorescent substrates, specifically red crust algae, on the  sides of boulders influences the spatial distribution of the biofluorescent chiton *I. pectinata*. Our hypotheses are: 1) boulders with a higher percentage of fluorescent substrate coverage on their side surfaces will have a greater abundance of chitons, and 2) this relationship is not influenced by a species-specific effect of the red crust algae. 
+
+# **2. Material and Methods**
+
+## *Study site*
+
+Our research was conducted in four intertidal reefs, arranged from north to south: Pitangui (05°37’S 35°13’W), Santa Rita (05°41’S 35°11’W), Búzios (06°00’S 35°06’W), and Baía Formosa (06°22’S 34°59’W). These reefs are situated along approximately 90 km of the eastern coast of Rio Grande do Norte, on the northeast coast of Brazil (Figure 1). The region experienced a tropical humid climate, with annual precipitation reaching up to 1500mm, mainly occurring during the austral spring [@vital2016]. The dry season runs from October to December, while the rainy season lasts from February to September [@diniz2015]. During the dry season, sea temperature averages 28 ± 0.01°C (mean±SD), with salinity of 35 ± 0.02. In the rainy season, these values drop to 27 ± 0.03°C and 34 ± 0.06 respectively [@hazin2008]. Winds come predominantly from the southeast [@silva2002] with a mean speed ranging between 3.7 m/s (April) and 5.1 m/s (October) [@barros2013a]. Tides follow a semi-diurnal pattern with a meso-tidal regime [@vital2016]. The beaches are primarily composed of siliciclastic sands, consisting mainly of moderately sorted fine to medium-grained quartz, with carbonate sediments observed as biodendritic gravel [@vital2009]. Small rivers contribute to reduced fluvial discharge and depositing coarse silt sediments (‘muddy’) primarily at their mouths [@vital2016].
+
+## *Field Methods/ Data Collection*
+
+Our sampling was carried out during low tide between April and May 2021, encompassing a total of 120 boulders (30 boulders per reef). Before sampling, we conducted a preliminary search at each reef to locate the presence of the chiton species *I. pectinata* in the sampling area. Once identified, we randomly selected a direction using a digital stopwatch [@gotelli2012] to determine North (odd/odd), East (odd/even), South (even/even), or West (even/odd). We then walked (15 steps) in the chosen direction and selected the nearest accessible boulder that could be overturned without being buried or trapped [@palmer2012]. Using the stopwatch again, we decided whether to sample the boulder or not. If the decision was negative or if we left the sampling area, we repeated the process. There was no restriction on the weight of the boulders, as long as they could be overturned and moved [@palmer2012]. At each boulder, we recorded the abundance of attached chitons of *I. pectinata* ("*Chitons*"), water temperature ("*Temp*"), tide level in relation to the base of the boulder ("*Wt.level*"), and weight ("*Weight*"). Additionally, we took photographs from all sides of the boulder with a scale for subsequent analysis of the exposed (*i.e.* surface not covered by the macroalgae canopy) lateral substrate cover. Each boulder was weighed in a cloth bag using a handheld scale. These measurements were performed as the final step to minimize any potential impact on chiton abundance [@sigwart2019]. All boulders were georeferenced and it was treated as an independent unit of habitat [@palmer2012]. After sampling, each boulder was returned to its original position and orientation.
+
+Images were analyzed using the PhotoQuad software [@trygonis2012]. After the image calibration, we manually defined a region of interest (ROI) for each side of the boulder to determine the exposed side surface area ("*Expo.area*"). Within each ROI, we spawned 70 stratified random points (*marker*: circle, *size*: 10, *width*: 2) to determine the percentage of substrate coverage. The points were marked according to the following coverage categories: "hard" red crust algae (*Lithothamnium* sp., also know as Crustose Coralline Algae - CCA), "soft" red crust algae (*Peyssonnelia* sp.), dead red crusts, bare rock, microbial mats, ascidians, bryozoans, cnidarians, polycheats, mollusks, holes and unidentifiable substrates. Nos colocamos a aquilo que paulo falou sobre nem todas as peyssonelia serrem sof
+
+## *Statistical Analysis*
+
+We organized our data into ten explanatory variables: fluorescent substrates ("*Flu.cover*"), which include living "hard" red crust algae ("*Live.cca*") and "soft" red crust algae ("*Live.pey*") coverage; unfluorescent substrates ("*Unflu.cover*"), comprising dead red crusts ("*Dead.red.crust*") and other unfluorescent substrates ("*Unflu.others*", combining bare rock and microbial mats); ascidians ("*Asc.cover*"); bryozoans ("*Bryo.cover*"), sponges ("*Spong.cover*"), and  "*Others*" ( Holes and unidentifiable substrates). We excluded variables for  cnidarians, polychaetes, and mollusks because their average coverage was less than 1%. Subsequently, we conducted a data exploration analysis (Supplementary Material A) following the protocol described in Zuur *et al.* (2010). One-way data comparisons across different reefs were performed using the Kruskal-Wallis test (hereafter as KW test), followed by Dunn's multiple comparison post-hoc test with Bonferroni correction. We use Kendall’s tau coefficient to assess variable correlations. To avoid collinearity, we calculated Variance Inflation Factor (VIF), excluded the variable "*Unflu.cover*" to ensure VIF values remained below 2 [@zuur2010]. For model building, we opted for a top-down strategy [@west2022]. 
+
+We fitted a 'loaded' mean structure model, excluding cnidarians, polychaetes, and mollusks variables because their average coverage was less than 1%.  Furthermore, we tested whether incorporating a random effect structure improved the model and then reduced it by removing non-significant fixed effects (Supplementary Material B).
+
+Akaike's information criterion corrected for small samples (AICc) was used to rank alternative (nested) models, with a decrease in ΔAICc of ≥1 considered a substantial improvement [@burnham2002]. Akaike weights, ranging from 0 to 1, were computed for each model, with higher values indicating more plausible models. We applied the likelihood ratio test via ANOVA with correction for testing on the boundary to compare these (nested) models [@zuur2009]. Following model selection, scaled residuals were computed, visually inspected for deviations from uniformity, and evaluated using fit tests on the simulated residuals with the '*DHARMa*' package [@hartig2022]. To investigate whether the abundance of fluorescent chitons is influenced by the fluorescent substrate ("*Flu.cover*") on the sides of the boulders, we performed a Poisson generalized linear mixed model with zero inflation (ziGLMM Poisson) and square root transformation to the predictor for a better fit. To assess whether the effect of fluorescent substrate coverage can be translated into a species-specific association with the type of red crust algae on the boulders, we constructed a new model using the predictors "*Live.cca*" and "*Live.pey*" separately. Our final best-fit model was a Negative Binomial generalized linear mixed model with zero inflation (ziGLMM Negative Binomial). All statistical analyses were conducted using R software (R Development Core Team 2024), fitting the GLMM models with the “glmmTMB” package [@brooks2017].
+
+# **3. Results**
+
+## *General characterization and comparison among reefs*
+
+A total of 137 chitons were recorded, with adults comprising 95.6% of the regional population, while juvenile chitons accounted for 4.4%. This gives a ratio of one juvenile chiton for every 20 adults. At the time of sampling, only eight individuals were found in activity on the side of the boulders. Overall, 36.6% of the boulders were occupied by chitons, with an encounter rate of approximately nine chitons per hour. At the reef scale, Búzios exhibited a significantly higher abundance compared to other locations (p<0.01, KW test), with an average density of 3.60 chitons per boulder (Table 1). At the habitat scale, the boulder exhibited consistent weights (p=0.53, KW test) and estimated areas (p=0.70, KW test) across the different reefs. They had an average weight of 7.0 $\pm$ 6.3 kg ($\overline{x}\pm SD$), with a minimum of 1.5 kg and a maximum of 25 kg, and an estimated surface area was 267 $\pm$ 144 cm^2^, ranging from 75 cm^2^ to 830 cm^2^. On the other hand, water levels showed significant variations (p<0.01, KW test), ranging from a minimum of 11.2 $\pm$ 6.3 cm in Santa Rita to a maximum of 76.8 $\pm$ 28.7 cm in Búzios. Consequently, differences in water temperature (30.7 $\pm$ 1.5 °C) were also observed across reefs (p<0.01, KW test), with Pitangui showing the lowest average values (28.9 $\pm$ 0.9 °C) and Santa Rita the highest (32.3 $\pm$ 0.8 °C). 
+ 
+On the boulder's side, the global averaged exposed side surface area was 222 $\pm$ 121 cm^2^, ranging from 60.78 cm^2^ to 698.36 cm^2^. There were no significant variations between reefs (p=0.44, Kruskal-Wallis test). Globally, the exposed side was composed of 54.11 $\pm$ 20.19% fluorescent substrates, 31.83 $\pm$ 18.29% unfluorescent substrates, 12.10 $\pm$ 12.07% animals, and 1.96 $\pm$ 2.45% other components. Fluorescent substrates were present on the side faces of all boulders, including both red crust species, with the  crustose coralline algae (*Lithothamnium* sp.) being the most prominent in all reefs (Table 1). In short, we found variations in the coverage of fluorescent substrates (p<0.01, KW test), crustose coralline algae (p<0.01, KW test), and red soft crust algae (p<0.01, KW test) among reefs (Table 1). Unfluorescent substrates, which included dead red crust (13.63 $\pm$ 10.11%), "bare rock" surfaces and microbial mets (**falta calcular e inserir no Supp A**), also varied among reefs (p<0.01, KW test). Animal coverage primarily consisted of ascidians (5.79 $\pm$ 7.78%), sponges (2.83 $\pm$ 4.85%), and bryozoans (1.54 $\pm$ 4.14%). Among these, only bryozoans showed consistent coverage across different reefs (p=0.27, KW test).
+
+## *Chitons abundance increases with fluorescent and bryozoans covers*
+
+Our analysis shows that the abundance of chitons increases with the rise in fluorescent substrates and bryozoan coverage on the sides of boulders (FIGURE 2). Specifically, chiton's abundance increases at a rate of 0.02 chitons per percentage of fluorescent substrates (ziGLMM Poisson, z=3.11, SE=0.01, p<0.01) and approximately 0.20 chitons per square root of bryozoan coverage (ziGLMM Poisson, z=1.96, SE=0.11, p<0.05). When examined through a species-specific relationship between chitons and red crusts, chiton abundance becomes proportionally linear to the increase of bryozoans, at a rate of 0.05 chitons/bryozoan cover (GLMM Negative Binomial, z=2.28, SE=0.02, p=0.02). In this context, the live cover of neither CCA nor soft red crusts significantly predicted an increased likelihood of the data's occurrence in our model (Table 2).
+
+# **4. Discussion**
+
+Using ecological modeling, our study demonstrates that the abundance of this chiton species increases with a higher percentage of fluorescent substrate and bryozoan cover on the boulder side, revealing a non-species-specific algae role in the chiton-red algal crust association. Our best model indicates that the combined effect of red crusts algae as fluorescent substrates is more important than the species-specific effect. 
+
+Many studies emphasize the importance of hard red crust algae species over ones in both the feeding biology [@demopulus1975; @nishi1975; @kangas1984; @piercy1987;  @camus2012; @sigwart2017] and larval settlement of chitons [@barnes1973; @rumrill1983]. 
+
+Esta forte relação dos quítons as coralines crustose algae é muito bem ilustrado pela associação entre Choneplax/ Porolithon. O quiton Chenoplax late tem como principal presa a alga crustose Porolithon pachydermun, mas apesar de consumi-la diretamente, seu pastejo não danifica os tecidos fotosinteticos e reprodutivos da alga, mas sim favorece a atividade meristemática, elevando crescimento líquido, bem como ao aumento da biomassa e da acreção de carbonato estrutural.
+
+
+....with studies indicating mutual benefits arising from the chiton-red algae association [@steneck1982a; @littler1995]. 
+
+Crustose coralline algae constitute the primary food source for many chitons species ,
+
+
+This suggests that visual aspects of habitat may be important in determining the spatial distribution of adult chitons.
+
+Chitons are organisms highly sensitive to light [@li2015]. Like many animals with planktonic larvae, their sensitivity likely shifts ontogenetically [@marshall1999]. For example, the boulder chiton species *Ischnochiton magdallensis* has larvae that are positively phototropic, while the adults exhibit negative phototropism [@heath1899; @arey1919]. This typically occurs because the visual requirements of the planktonic larvae differ significantly from those of the adult niche, often demanding substantial optical reorganization [@cronin2014]. Sensorially, the individual niche of an organism is circumscribed by multimodal sensory limits [@stevens2013]. This is especially relevant in biofouling studies, where the physico-chemical interactions for larval settlement need to be completely understood for the development and potential applications of non-toxic, inexpensive, and low or zero environmental impact antifouling systems on benthic communities. Although many studies deal with just one modality at time, e.g. chemical cues, visual cues can also be important, specially on a finer scale, in determining larval settlement [@ambrose2021]. Fluorescence can enhance the intensity of a surface through a low-energy-cost physical process [@johnsen2011], attracting positively photosensitive larvae [@matsumura2014]. 
+
+Chiton larvae (i.e. trochophores) developed eyes at 3-day-old [@sirenko2018]. Laboratory experiments have demonstrated that larvae seem to actively choose to settle on bryozoan colonies [@creese1986] or crustose coralline algae [@barnes1973; @rumrill1983]. 
+
+Crustose coralline algae constitute the primary food source for many chitons species [@kangas1984; @sigwart2017], with studies indicating mutual benefits arising from the chiton-red algae association [@steneck1982a; @littler1995]. Differential larval dispersion can result in aggregated spatial distributions patterns among chitons, which may explain why chitons inhabiting the same boulder are not genetically related [@palmer2012]. However,as a mobile species, adult chitons are not confined to their larval settling sites and can migrate between boulders [@liversage2017a]. Therefore, the increased abundance of *I. pectinata* associated with greater fluorescent coverage on the side of boulder may be linked to other factors, such as avoidance visual predators by visual camouflage [@mendonca2016; @sigwart2018; @grimaldi2023].
+
+
+
+
+Boulder reefs are typically characterized by habitat specialist species, which are patchily distributed throughout the reef landscape [@chapman1997; @smith1997; @chapman2002a]. Habitat specialist species often exhibit aggregated spatial distributions at the scale of individual boulders, with large numbers occupying a few boulders while many others remain unoccupied [@chapman2002; @grayson2004; @smoothey2007; @palmer2012]. Ecological studies in this habitat have predominantly focused on the lower and/or upper surfaces of boulder habitats, often neglecting the sides [@kangas1984; @chapman2005; @liversage2012; @liversage2015]. However, mobile species can spatially utilize boulder habitats in a three dimensional way [@evans1951; @wells1980]. Boulder chitons, for example, are frequently found beneath boulders, emerging at specific times to feed on the sides [@liversage2017a]. The west Atlantic species *Ischinoplax pectinata* exhibits fluorescence in its shell, leading us to assume that individuals would be more associated with habitats with greater coverage of fluorescent substrate, particularly along the side of boulder [^4] [@grimaldi2023]. Fluorescent substrates on boulders are primarily composed of encrusting red algae, which contain highly fluorescent pigments known as phycobiliproteins [@glazer1994]. So, these algae could serve both as a food source and potentially provide a visual background effect against visual guided predators [@sigwart2017; @sigwart2018]. 
+
+
+
+Bryozoan cover emerged as an important predictor for chiton abundance, consistently proving to be a significant factor in the models. Although bryozoans cover a smaller percentage of the boulder side compared to other elements, chiton's abundance increases proportionally to the square root of bryozoan coverage. In other words, when bryozoan cover quadruples, the chiton abundance doubles. Bryozoans are a dietary component of many chiton species, even if only in small quantities [@gordon1972; @lidgard2008; @byrnes2009; @sigwart2017]. They likely also constitute part of the diet of *I. pectinata*, playing a crucial role in its ecology. An indirect approach as studying the stomach/gut contents across different seasons and life stages could provide evidence to support this hypothesis. Additionally, a morphological study of bryozoan colonies can also offer clues, as certain species develop defensive spines under predation pressure [@harvell1998]. However, chitons may not be feeding on the bryozoans themselves but rather on the associated copepods, amphipods or hydroids [@osman1981; @lidgard2008]. Like many other mollusks, chitons feed with a beltlike, muscularized strap bearing rows of teeth mineralized with iron oxides, known as the radula [@joester2016]. Herbivorous chitons use their radula to scrape algae off rock (or tear pieces of macroalgae), often leaving scars on hard surfaces such as crustose coralline algae or rocks [@littler1995]. Thus, although chiton species exhibit a variety of feeding habits (even xylophagous, @duperron2013; @sigwart2017), their gut contents often include a diverse array of items, including rock fragments, sand, and detritus [@langer1983; @demopulos1975; @fulton1975; @glynn1970; @barnawell1960]. This unintentional ingestion, known as "bulldozing", may obscure the role of bryozoans as a food source to *I. pectinata* when compared to more voluminous elements in stomach contents, such calcareous algae.
+
+Many organisms exhibit biofluorescence, including sponges [@read1968], cnidarians [@mazel1995; @maggioni2020], mollusks [@betti2021a], spiders [@brandt2017], fish [@michiels2008], amphibians [@taboada2017a; @lamb2020a], reptiles [@gruber2015a; @protzel2021], birds [@arnold2002; @pearn2003], and mammals [@kohler2019; @olson2021a]. Additionally, a variety of fluorescent proteins have been  identified in both plants and animals [@goodwin1953; @alieva2008]. Their presence in the tissues and exoskeletons seems to serve diverse functions related to the biology, ecology and evolution of species [REF]. These hypothetical functions include photoprotection [@salih2000], photosynthesis improvement [@dove2001], host interaction [@aihara2019], pollinator/ prey attraction [@gandia-herrero2005; @kurup2013; @haddock2015], mate choice [@arnold2002; @lim2007], communication [@mazel2004; @gerlach2014a], and camouflage [@sparks2014a; @gruber2016a]. Although many of them are controversial [@pearn2001; @mazel2003a, @iriel2010; @mazel2017]. The origin of biofluorescence in *I. pectinata* remains unknown. It is possible that it results from the direct or accidental ingestion of red crusts algae (*Lithothamnium* sp. and *Peyssonnelia* sp.), which are rich in phycobiliproteins, known for their high fluorescence [@glazer1994]. A previous study showed that as individuals of  *I. pectinata* grow, the fluorescence area on their shell decreases [@grimaldi2023]. If the fluorescence of the species is due to its feeding habit, then changes in diet during different life stages might be occurring [@camus2012]. Our data suggest a possible differentiation in the habitat use between phases, with few juveniles being found sharing boulders with adults. Perhaps the species exhibits an ontogenetic niche shift as a necessary condition for reproduction or predator avoidance [@sanchez-hernandez2019], with juveniles being more frequently found in other habitats of the reef ecosystem, e.g. rhodolith beds (Pers. Observation). A long-term population demographic study could reveal potential ecological trade-offs throughout both ontogeny and season [@kimirei2013]. 
+
+According to IPPC Sixth Assessment Report, it is almost certain ("*high confidence* scenario") that seawater pH has decreased globally over the past 40 years, signifying a major process of ocean acidification [@ipcc2023]. This is associated with $CO_2$ uptake, which changes the chemistry of seawater and reduces the saturation state of calcium carbonate,a crucial component of the skeletons and shells of a variety of marine organisms [@jones2017; @osborne2020]. Biomineralized organisms living on boulder reefs may respond differently to ocean acidification. For instance, crustose coralline algae are particularly vulnerable [@kamenos2016], while *Peyssonnelia* sp. (and even bryozoans, @swezey2017) may exhibit adaptive response to acidification [@linares2015]. Chiton valves have also been showed to be resistant to acidification [@sigwart2014;@sigwart2015;@pebbles2019]. In fact, the chiton lineage has survived major changes throughout Earth's history [@sigwart2014]. However, the effects of global change also encompass temperature shifts, which together may cause hypoxia of coastal habitats [@melzner2013] and food availability [@thomsen2013]. Moreover, in intertidal ecosystems, increasing storm frequency is anticipated to alter coastal hydrodynamics [@ipcc2023]. These changes may modify the disturbance regime in boulder reefs systems, especially those caused by physical damage such as wave action, sand abrasion, and collisions with human-made debris and between boulders. This plethora of interacting factors produces varied spatiotemporal effects at different ecological scales, directly impacting the lives of individuals. However, do these changes affect fluorescence? Understanding how such changes might influence the detection and perception of organisms and their subsequent effect on ecological interactions, requires further investigation.
+
+Boulder reefs are highly complex, unstable and meta-dynamic habitats*[^5]. Understanding the dynamics of ecological relationships that are established in these environments is crucial for a better understanding of future scenarios of global change. In this study, we investigated a biofluorescent chiton species and its relationship with substrate coverage on the sides of its boulder habitats. We find a direct relationship between its abundance and the coverage of fluorescent substrates and bryozoans. This highlights the importance of examining the side of boulders in the ecological studies of boulder chitons. Additionally, we explore the possibility that the chiton-red crust algae association might extend beyond a purely trophic relationship, involving visual aspects enhanced by fluorescence.
+
+# Significance statement (if applicable)
+
+# Data Availability
+
+# **Conflict of interest statement**
+
+All authors declare no competing interests.
+
+# **Ethics statement (if applicable)**
+
+This study was exempted by the Animal Use Ethic Committee of Federal University of Santa Catarina in accordance with Brazilian federal legislation (n°11.794, October 8, 2008). The field site is publicly accessible, and no additional licenses were required.
+
+# **Funding statement (if applicable)**
+
+This work was supported by funding from the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) through a doctorate scholarship (88887497855202000).
+
+# Acknowledgements (if applicable)
+
+# Teaser Text
+
+# Author Contributions
+
+# Supporting Information
+
+# *References*
+<div id="refs"></div>
+
+# *Figures and tables with captions.*
+
+# **Glossary**
+
++ **acidification.** The process of soil or water becoming more
+acidic, with a loss of base cations (calcium, magnesium,
+potassium) and an increase in hydrogen and aluminum ion
+concentrations
+
++ Association Term used for a wide range of situations
+where different species occur together.
+
++ Adaptation Change in the genetic structure of a population due to natural selection, which leads to an improvement in
+function in relationship to the environment (encyeco)
+
+Adaptation The process, driven by natural selection, whereby species or populations become better suited to the environment.
+It takes place over generations and results in an increase in those genes (or alleles) that allow individuals in a population to
+better survive and reproduce in an environment [ecncy aim beha]
+
+adaptation A trait that results in the highest fitness among a specified set of behaviors
+in a particular environment. Adaptations are typically the result of the process of
+natural selection.(dugatkin2019animal beha)
+
++ Aposematism A warning signal present in some species,
+directed to predators, that informs them about the unpalability or unprofitability of the aposematic individual. EN eco
+
+Aposematic Describing an organism that is rendered less
+susceptible to predation by advertising its obvious
+unpalatability. [encbio]
+
++ **background.** refers to the environmental or contextual visual information that surrounds a focal object or subject in a scene. It includes elements such as textures, colors, patterns, and objects in the periphery, which can affect perception, attention, and behavior in organisms. 
+
++ **benthic.** the community of organisms living on, near,attached to the sea floor, as opposed to floating in the water.
+
++ **bioluminescence.** light generated by an enzymatic reaction (luciferase) within a living organism.
+
++ **biofouling.** the growth of epibionts on the surface of a host. {AINDA NAO}
+
++ **boulder dwellers.** a diverse group of sessile and mobile organisms that inhabit various parts of boulders, including crevices, holes, and the upper, side, and undersides surfaces.
+
++ **boulder habitat.** is an ecological environment formed by boulders, providing a variety of microhabitats that support diverse communities of organisms. It plays a crucial role in promoting biodiversity by creating niches for different species to thrive.
+
++ **boulder reefs.** *to be defined*
+
++ **brightness.** refers to the perceived amount of light a given surface seems to emit or reflect [@vandenberg2020].
+
++ **calcified.** incorporating or coated with calcium carbonate (limestone), resulting in a hardened structure.
+
++ **coralline.** a type of algae in the order *Corallinales*, characterized by cell walls that contain calcium carbonate, giving them a hard, calcified structure. Typically pink or reddish in color.
+
++ **crust.** It is a flat growth form with one whole side attached to the
+substratum, growing outward as a laterally expanding disk.
+
++ **crustose.** growing as a crust, prostrate along the substratum.
+
++ **cue.** an incidental source of information that may influence the behavior of a receiver, despite not having evolved under selection for that purpose [@stevens2013].
+
++ **communication.** The transfer of information from a signaler to a receiver.[dugaktin2019]
+
+
++ Dispersal Individuals or populations (or parts of populations) that move to reach new areas, but do not return.
+
++ Disturbance Any temporary change in average environmental conditions severely disrupting an ecological population or community, such as fire, flood, ice-scouring; such
+events create open space, available for colonization. [enc.eco]
+
+disturbance The injury, displacement, or mortality of
+organisms caused by an external physical or biological
+agent (other than predation). [enc.tide]
+
++ Disturbance regime The nature, frequency and intensity
+of events or agents that cause a temporary or permanent
+loss of biomass [enc.bio]
+
++ Ecosystem A community of living things and the biophysical environment in which they interact, including
+genetic, physiological, morphological, population, energyflow, and nutrient-cycling characteristics of living things. [enc.eco]
+
+ecosystem An ecological system comprising an assemblage
+of organisms living together with their environment.[enc.tide]
+
+Ecosystem A community of organisms (plants, animals,
+and microbes) and their physical environment interacting
+as an ecological unit, such as a lake, a wetland, a forest, or
+an agricultural landscape [enc.biodiv]
+
++ Fitness The ability of an individual to survive and reproduce in its environment.
+Fitness The fitness of an individual is the proportion of the individual’s genes, or more correctly alleles, that are passed on to
+the following generations.[ ency anim beha]
+
+Fitness A description of an individual’s reproductive success, fitness is the average contribution to the gene pool of the next
+generation that is made by individuals of the specific genotype or phenotype. [enc.an.beha]
+
+fitness The evolutionary success of an individual, measured as the probability that its alleles are passed on to
+the next generation. [ecn.tide]
+
++ **foraging.** feeding and all behaviors associated with feeding [duga2019].
+
++ **habitat.** Location, at a particular scale of space and time, where an organism is able to conduct activities, actually lives, or potentially lives (adapted from Kearney, 2006).
+
+Habitat Space characterized by distinct environmental characteristics and that is associated with the presence of a particular
+species or community, or where a particular species or community could be found
+
+Habitat The living area of a species (plant, animal or
+microorganism)
+
+Habitat The natural environment in which an organism lives
+
++ **habitat quality.** *to be defined*
+
++ **habitat specialist.** *to be defined*
+
++ **habitat use.** *to be defined*
+
++ **information.** Acquired by organisms from the general environment or from other individuals and reduces uncertainty about a feature or state of the environment, individual, or future events [@stevens2013]. 
+
+Information Data that, when acquired, reduces an animal’s uncertainty about environmental or social conditions [enc.an.beh]
+
++ Intertidal zone The area on the coast that lies between the
+low-tide and the high-tide marks.(enc.eco)
+
++ **intertidal.** part of the coast that is covered by water at high tide but exposed to air at low tide.
+
++ Landscape The composition of an area of land including
+all of its elements and their spatially-explicit layout. An
+analogous term is a seascape for seas
+
++ larva: Larva/planula larva Free living soft-bodied embryo that settles on a solid substratum and forms a primary polyp[ ec.modercoralreef]
+
++ **mate choice.** any behavior that restricts the set of potential mates [enc.an.beh].
+
++ **microhabitat.** An area used for a specific type of activity (e.g., foraging, oviposition, nesting).
+
+Microhabitat Small-scale habitat within which an
+organism or community exists. [enc biodi]
+
++ Migration Individuals or populations (or parts of populations) that move between two well-defined habitats on a
+temporally predictable basis.
+
+
++ Multimodal: Multicomponent Signal Is made up of independent components that share physical properties and are processed by a shared
+sensory organ – e.g., dynamic movements of brightly colored appendages detected by eyes.
+Multimodal Signaling Involves the incorporation of signals across multiple sensory modalities into communication displays.
+Redundancy Is a systems design principle referring to system components with shared structure and shared function.
+
+
++ Niche A role (position) that a species plays in the environment, the status of an organism within its environment
+which affects its survival.
+
+niche The environmental space (biological and physical)
+within which a species can survive and reproduce. [ecn.tie]
+
+Niche The unique position occupied by a particular
+species in terms of the function that it performs within the
+community [enc.biodo]
+
++ "Ontogeny The development or course of development
+especially of an individual organism.
+Ontogenetic Associated with growth and development of an individual.encanbeha
+
++ **optical properties.** *to be defined*
+
++ **pattern.** Regularity in what we observe in nature, or in other words ‘widely observable tendencies’ (Lawton 1999).
+
++ pacth:... Patch dynamics An ecological concept according to which
+communities consist of a mosaic of patches, that is, discrete
+areas of variable size, shape, composition, history, and
+disturbance regimes,
+
++ Taxis: a directional response to a stimulus. In the case of a light stimulus, the response
+is called phototaxis.
+
++ Population Group of individuals of the same species,
+occupying the same space and time.
+Population A collection of organisms of the same species
+living in close proximity
+
++ Predation Interaction between two individuals, where one
+of the individuals benefits from the interaction (i.e., the
+predator) whereas the other is harmed (i.e., the prey). It
+includes the carnivory, herbivory, parasitism, parasitoidism,
+and pathogen–host interaction.
+
+predators Organisms that attack and eat other organisms.
+Predators typically kill and consume many prey during their
+development as larvae and as adults.
+
+predation A relationship between two individuals or species in which one consumes the other. Thus, PREDATOR.
+
++ predation risk...construir Risk The possible loss of fitness resulting from uncertainty
+
++ **Plankton Organisms that drift or float in the sea or
+freshwater. (ency eco)
+plankton Small-bodied animals (zooplankton) and plants
+(phytoplankton) that live suspended in the water column
+and are at the mercy of ocean currents for transport (i.e.,
+they cannot swim strongly). Thus, PLANKTONIC. [enc.tide]
+
++ **process.** ‘A continuous and regular action or succession of actions occurring or performed in
+a definite manner, and having a particular result or outcome; a sustained operation or series of
+operations’ (Oxford University Press 2024).
+
++ recruitment The input of new individuals into a population; in marine benthic communities, follows a period
+of settlement of larvae or propagules.
+
++ rhythm A physiological or behavioral cycle that is timed
+endogenously by one or more clocks that approximate
+periodicities of environmental cycles.
+
++ settlement The life phase characterized by the transition
+from a suspended larva to a site-attached adult
+
++ **sensory environment**:
+
++Sensory Modality Is used in reference to the combination of the physical form of the stimulus and the sensory system capable
+of its detection [enc.an.mod]
+
++ **signal.** Any act or structure that influences the behavior of other organisms (receivers), and which evolved, via selection, specifically because of that effect [modified @stevens2013]. 
+
++ **tapeta.** *to be defined*
+
+# Commits
+
+[^1]: See Glossary.
+
+[^2]: Pensar se devo botar os Moluscks.
+
+[^3]: Falar do significado de "a abundâcia de quítons crescer na raiz quadrada da cobertura de bryozoários", na Discussão ?
+
+[^4]: or "...suggesting a preference for habitats with greater coverage of fluorescent substrate, particularly along the vertical boulder faces." 
+
+[^5]: put "habitats" or "ecossystems"??
