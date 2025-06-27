@@ -79,13 +79,13 @@ Most studies on the spatial distribution of boulder chitons have focused on the 
 
 Our research was conducted in four intertidal reefs, arranged from north to south: Pitangui (05°37’S 35°13’W), Santa Rita (05°41’S 35°11’W), Búzios (06°00’S 35°06’W), and Baía Formosa (06°22’S 34°59’W). These reefs are situated along approximately 90 km of the eastern coast of Rio Grande do Norte, on the northeast coast of Brazil (Figure 1). The region experienced a tropical humid climate, with annual precipitation reaching up to 1500mm, mainly occurring during the austral spring (Vital et al., 2016). The dry season runs from October to December, while the rainy season lasts from February to September (Diniz and Pereira, 2015). During the dry season, sea temperature averages 28 ± 0.01°C (mean±SD), with salinity of 35 ± 0.02. In the rainy season, these values drop to 27 ± 0.03°C and 34 ± 0.06 respectively (Hazin et al., 2008). Winds come predominantly from the southeast (Silva et al., 2002) with a mean speed ranging between 3.7 m/s (April) and 5.1 m/s (October) (Barros 2013). Tides follow a semi-diurnal pattern with a meso-tidal regime (Vital et al., 2016). The beaches are primarily composed of siliciclastic sands, consisting mainly of moderately sorted fine to medium-grained quartz, with carbonate sediments observed as biodendritic gravel (Vital, 2009). Small rivers contribute to reduced fluvial discharge and depositing coarse silt sediments (‘muddy’) primarily at their mouths (Vital et al., 2016).
 
-## *Field Methods/ Data Collection*
+## Field Methods/ Data Collection
 
 Our sampling was carried out during low tide between April and May 2021, encompassing a total of 120 boulders (30 boulders per reef). Before sampling, we conducted a preliminary search at each reef to locate the presence of the chiton species I. pectinata in the sampling area. Once identified, we randomly selected a direction using a digital stopwatch (Gotelli and Ellison, 2012) to determine North (odd/odd), East (odd/even), South (even/even), or West (even/odd). We then walked (15 steps) in the chosen direction and selected the nearest accessible boulder that could be overturned without being buried or trapped (Palmer, 2012). Using the stopwatch again, we decided whether to sample the boulder or not. If the decision was negative or if we left the sampling area, we repeated the process. There was no restriction on the weight of the boulders, as long as they could be overturned and moved (Palmer, 2012). At each boulder, we recorded the abundance of attached chitons of I. pectinata (‘Chitons’), water temperature (‘Temp’), tide level relative to the boulder’s base (‘Wt.level’), and weight (‘Weight’). Photographs of the underside and all sides of each boulder, with a scale included, were taken for subsequent analysis. Each boulder was weighed using a handheld scale and a cloth bag. To minimize any potential impact on chiton abundance, these measurements were performed as the final step. All boulders were georeferenced and treated as independent habitat unit (Palmer, 2012). After sampling, each boulder was carefully returned to its original position and orientation.
 
 Images were analyzed using PhotoQuad software (Trygonis and Sini, 2012). After calibrating the images, a region of interest (ROI) was manually defined for each boulder and side to measure the total boulder surface area (‘Boulder.area’) and the exposed side area (‘Expo.area’), representing areas not covered by the macroalgae canopy. Within the ROI of the exposed side area, 70 stratified random points (marker: circle, size: 10, width: 2) were generated to determine substrate coverage percentages. These points were categorized into the following coverage types: living crustose coralline algae (CCA, Lithothamnium sp.), “soft” red crust algae (Peyssonnelia sp.), dead red crusts (which includes both red algae types), ascidians, bryozoans, cnidarians, polychaets, mollusks, sponges, bare rock, holes, microbial mats, and unidentifiable substrates. Although some Peyssonnelia species have heavily calcified cell walls, they lack the substantial calcium carbonate deposits characteristic of many crustose coralline algae. This distinction gives Peyssonnelia a softer and more flexible texture, contrasting with the rigid structure typical of calcified red algae (Guimarães and Fujii, 1999).
 
-## *Statistical Analysis*
+## Statistical Analysis
 
 We organized our data into ten explanatory variables. Fluorescent substrates (‘Flu.cover’), which include living coverage of "hard" red crust algae (‘Live.cca’) and "soft" red crust algae (‘Live.pey’). Non-fluorescent substrates (‘Unflu.cover’), comprised coverage of dead red crusts (‘Dead.red.crust’) and other non-fluorescent substrates (‘Unflu.others’), such as bare rock and microbial mats. Additional variables included ascidian coverage (‘Asc.cover’), bryozoan coverage (‘Bryo.cover’), sponge coverages (‘Spong.cover’), and ‘Others’ (holes and unidentifiable substrates). Subsequently, we conducted a data exploration analysis (Supplementary Material A) following the protocol described by Zuur et al. (2010). To one-way comparisons across reefs, we used the Kruskal-Wallis test (hereafter as KW test) and Dunn’s multiple comparison post-hoc test with Bonferroni correction. Variable correlations were assessed using Kendall’s tau coefficient. To avoid collinearity, we calculated the Variance Inflation Factor (VIF), excluding the variable ‘Unflu.cover’ to ensure VIF values below 2 (Zuur et al., 2010). For model building, we opted for a top-down strategy (West et al., 2022). A loaded mean structure model was fitted, excluding cnidarian, polychaete, and mollusk variables due to their low combined coverage (<1%). Since our focus was not on assessing the effect of different reefs on chiton abundance, we considered incorporating a random effect structure for ‘Sites’. The model was simplified by removing non-significant fixed effects (p-values below or near 0.05, Zuur et al., 2009), retaining only those essential for preserving the model’s optimal fit (Supplementary Material B). 
 
@@ -93,19 +93,25 @@ We organized our data into ten explanatory variables. Fluorescent substrates (�
 Bayesian information criterion (BIC) was used to rank alternative (nested) models, with a decrease in ΔBIC of ≥1 considered a substantial improvement (Burnham and Anderson, 2002). Bayesian weights, ranging from 0 to 1, were computed for each model, with higher values indicating more plausible models. To compare these nested models, we applied the likelihood ratio test via ANOVA, incorporating corrections for testing on the boundary (Zuur et al., 2009). Following model selection, scaled residuals were computed, visually inspected for deviations from uniformity, and evaluated using fit tests on the simulated residuals with the ‘DHARMa’ package (Hartig and Lohse, 2022). To investigate whether the abundance of fluorescent chitons is influenced by the fluorescent substrate coverage (“Flu.cover”) on the sides of the boulders, we performed a Poisson generalized linear mixed model with zero inflation (ziGLMM Poisson), incorporating ‘Sites’ as a random effect and applying a square root transformation to the predictor for a better fit. To assess whether the effect of fluorescent substrate coverage reflects a species-specific association with the red crust type on boulders, we developed a new model using the predictors ‘Live.cca’ and ‘Live.pey’ as predictors. The final best-fit model was a Negative Binomial generalized linear mixed model with zero inflation (ziGLMM Negative Binomial). All statistical analyses were conducted in R (R Development Core Team, 2024), with GLMM models fitted using the glmmTMB package (Brooks et al., 2017).
 
 
-# **3. Results**
-AINDA NAO ATUALIZEI OS RESULTADOS COM O POS PRE BANCA
-## *General characterization and comparison among reefs*
+# Results
 
-A total of 137 chitons were recorded, with adults comprising 95.6% of the regional population, while juvenile chitons accounted for 4.4%. This gives a ratio of one juvenile chiton for every 20 adults. At the time of sampling, only eight individuals were found in activity on the side of the boulders. Overall, 36.6% of the boulders were occupied by chitons, with an encounter rate of approximately nine chitons per hour. At the reef scale, Búzios exhibited a significantly higher abundance compared to other locations (p<0.01, KW test), with an average density of 3.60 chitons per boulder (Table 1). At the habitat scale, the boulder exhibited consistent weights (p=0.53, KW test) and estimated areas (p=0.70, KW test) across the different reefs. They had an average weight of 7.0 $\pm$ 6.3 kg ($\overline{x}\pm SD$), with a minimum of 1.5 kg and a maximum of 25 kg, and an estimated surface area was 267 $\pm$ 144 cm^2^, ranging from 75 cm^2^ to 830 cm^2^. On the other hand, water levels showed significant variations (p<0.01, KW test), ranging from a minimum of 11.2 $\pm$ 6.3 cm in Santa Rita to a maximum of 76.8 $\pm$ 28.7 cm in Búzios. Consequently, differences in water temperature (30.7 $\pm$ 1.5 °C) were also observed across reefs (p<0.01, KW test), with Pitangui showing the lowest average values (28.9 $\pm$ 0.9 °C) and Santa Rita the highest (32.3 $\pm$ 0.8 °C). 
- 
-On the boulder's side, the global averaged exposed side surface area was 222 $\pm$ 121 cm^2^, ranging from 60.78 cm^2^ to 698.36 cm^2^. There were no significant variations between reefs (p=0.44, Kruskal-Wallis test). Globally, the exposed side was composed of 54.11 $\pm$ 20.19% fluorescent substrates, 31.83 $\pm$ 18.29% unfluorescent substrates, 12.10 $\pm$ 12.07% animals, and 1.96 $\pm$ 2.45% other components. Fluorescent substrates were present on the side faces of all boulders, including both red crust species, with the  crustose coralline algae (*Lithothamnium* sp.) being the most prominent in all reefs (Table 1). In short, we found variations in the coverage of fluorescent substrates (p<0.01, KW test), crustose coralline algae (p<0.01, KW test), and red soft crust algae (p<0.01, KW test) among reefs (Table 1). Unfluorescent substrates, which included dead red crust (13.63 $\pm$ 10.11%), "bare rock" surfaces and microbial mets (**falta calcular e inserir no Supp A**), also varied among reefs (p<0.01, KW test). Animal coverage primarily consisted of ascidians (5.79 $\pm$ 7.78%), sponges (2.83 $\pm$ 4.85%), and bryozoans (1.54 $\pm$ 4.14%). Among these, only bryozoans showed consistent coverage across different reefs (p=0.27, KW test).
+## General characterization and comparison among reefs
 
-## *Chitons abundance increases with fluorescent and bryozoans covers*
+A total of 137 chitons were recorded, with adults comprising 95.6% of the regional population. Juvenile chitons, 1°-5° developmental stage (Jardim, 2015), accounted for 4.4%, resulting in a ratio of one juvenile every 20 adults. Chitons occupied 36.6% of the boulders sampled, with an encounter rate of approximately nine chitons per hour. During sampling, only eight individuals were observed active on the side of the boulders. At the reef scale, Búzios showed a significantly higher chiton abundance compared to other locations (p<0.01, KW test), with an average density of 3.60 chitons per boulder (Table 1). Significant variation was observed in water levels (mean $\pm$ SD: 37.9 $\pm$ 31.8 cm, p<0.01, KW test) and water temperature (30.7 $\pm$ 1.5 °C, p<0.01, KW test). The boulders had an average weight of 7.0 $\pm$ 6.3 kg, ranging from 1.5 to 25 kg, with no significant weight differences across reefs (p=0.53, KW test). Similarly, estimated surfaces areas showed consistent values across reefs (267 $\pm$ 144 cm^2^, p=0.70, KW test).
 
-Our analysis shows that the abundance of chitons increases with the rise in fluorescent substrates and bryozoan coverage on the sides of boulders (FIGURE 2). Specifically, chiton's abundance increases at a rate of 0.02 chitons per percentage of fluorescent substrates (ziGLMM Poisson, z=3.11, SE=0.01, p<0.01) and approximately 0.20 chitons per square root of bryozoan coverage (ziGLMM Poisson, z=1.96, SE=0.11, p<0.05). When examined through a species-specific relationship between chitons and red crusts, chiton abundance becomes proportionally linear to the increase of bryozoans, at a rate of 0.05 chitons/bryozoan cover (GLMM Negative Binomial, z=2.28, SE=0.02, p=0.02). In this context, the live cover of neither CCA nor soft red crusts significantly predicted an increased likelihood of the data's occurrence in our model (Table 2).
 
-# **4. Discussion**
+The exposed surface area of the boulder sides averaged 222 $\pm$ 121 cm^2^, with a range of 60.78 to 698.36 cm^2^. No significant differences were observed among reefs (p=0.44, KW test). On average, the exposed side surfaces consisted of 54.11 $\pm$ 20.19% fluorescent substrates, 31.83 $\pm$ 18.29% non-fluorescent substrates, 12.10 $\pm$ 12.07% animal coverage, and 1.96 $\pm$ 2.45% other components. Red-crusted algae were consistently present on the side faces of all sampled boulders, accounting 47.52 $\pm$ 21.39% crustose coralline algae (*Lithothamnium* sp.) and 6.59 $\pm$ 12.50% soft red-crusted algae (*Peyssonnelia* sp.). Despite their lower coverage, soft red crusts were found on 66% of the boulder’s side faces (Supplementary Material A). Animal coverage was primarily composed of ascidians (5.79 $\pm$ 7.78%), sponges (2.83 $\pm$ 4.85%), and bryozoans (1.54 $\pm$ 4.14%). Among these, only bryozoans showed no significant differences among reefs (Table 2).
+
+
+## Chitons abundance increases with fluorescent and bryozoans covers
+
+Our best model reveals that chiton abundance significantly increases with higher percentages of fluorescent substrate on the sides of the boulders, regardless of reefs characteristics (Table 3). Specifically, chiton’s abundance increases at a rate of 0.02 chitons per percentage of fluorescent substrates (ziGLMM Poisson, z=3.11, SE=0.01, p=0.002, Figure 2). The square root of bryozoan cover was essential for maintaining the structure of the best-fitted model. However, its influence on chitons was interpreted with parsimony, as it was close to the significance threshold (ziGLMM Poisson, z=1.96, SE=0.11, p=0.049).
+
+
+When assessing the species-specific relationship between chitons and red crust algae, algal cover did not predict a higher likelihood of chiton abundance on boulders. Instead, bryozoan cover emerged as the key predictor, showing a proportional linear increase in chiton abundance as bryozoan cover expanded on the boulder sides (Tabela 3). This relationship corresponds to a growth rate of 0.06 chitons per percentage increase of bryozoan cover (GLMM Negative Binomial, z=2.28, SE=0.03, p=0.022).
+
+
+# Discussion
 
 The Western Atlantic chiton, Ischnoplax pectinata, is a mollusk species with limited biological knowledge, typically found beneath boulders in the intertidal reefs of northeastern Brazil. Like other intertidal organisms, its activity seems to be influenced by tidal and non-tidal rhythms. Boulder chiton species are often observed crawling and feeding on the side surfaces of boulders during twilight (Glynn, 1970; Yoshioka and Fujitani, 2006; Aguilera and Navarete, 2012). However, I. pectinata stands apart, as its shells exhibit fluorescence when exposed to short-wavelength light, such as blue and UV light (Grimaldi et al., 2023). This phenomenon suggests that light interacts with their shell surfaces in ways that differ from typical reflection (Johnsen, 2011). Red crust algae are abundant along the edges of intertidal boulders (Liversage, 2016) and contain high concentrations of fluorescent pigments in their composition (Glazer, 1994). Although the chiton-red algae association is well-documented, most studies have primarily focused on their trophic relationships, leaving other aspects largely unexplored (Sigwart, 2018). Here, we propose that the relationship between I. pectinata and red crust algae may involve a visual component, potentially serving as camouflage against visually guided predators. Specifically, we hypothesize that I. pectinata is more abundant on boulders with greater coverage of fluorescent substrates on their sides. To test this, we constructed statistical models to analyze field ecological data, investigating whether chitons abundance correlates with the percentage of fluorescent substrate coverage on boulder sides and whether this relation is influenced by a species-specific effect of red crust algae. Our best-fitting model showed a clear positive association between chiton abundance and the level of fluorescent substrate coverage on boulder sides. Notably, bryozoan cover was a significant stabilizing predictor in the model that included fluorescent substrate coverage. It also emerged as the main predictor of chiton abundance in models evaluating the specific role of red crust algae, suggesting it may have a critical or complementary role.
 
@@ -120,36 +126,36 @@ The IPCC Sixth Assessment Report confirms with “high confidence” that seawat
 Boulder reefs are highly complex and dynamic ecosystems, characterized by their inherent instability and intricate ecological interactions. Understanding the relationships that underspin these environments is crucial for predicting how they will respond to future scenarios of global change. In this study, we investigated a biofluorescent chiton species and its association with substrate coverage on the sides of its boulder habitats. Our find reveals a direct correlation between chiton abundance and the coverage of fluorescent substrates and bryozoans. Furthermore, we explore the possibility that the chiton-red crust algae association extends beyond a simple trophic interaction, potentially involving visual aspects enhanced by fluorescence. Fluorescence may play a critical role in communication, habitat selection, and predator-prey dynamics, suggesting it could have significant ecological implications. Investigating how these visual processes are shaped by environmental changes provides valuable insights into the broader ecological consequences of global change. By exploring these connections, researchers can uncover how climate-induced disruptions shape the structure and resilience of boulder reef ecosystems, offering guidance for their conservation in an era of rapid change.
 
 
-# Significance statement (if applicable)
+**Significance statement (if applicable)**
 
-# Data Availability
+**Data Availability**
 
-# **Conflict of interest statement**
+**Conflict of interest statement**
 
 All authors declare no competing interests.
 
-# **Ethics statement (if applicable)**
+**Ethics statement (if applicable)**
 
 This study was exempted by the Animal Use Ethic Committee of Federal University of Santa Catarina in accordance with Brazilian federal legislation (n°11.794, October 8, 2008). The field site is publicly accessible, and no additional licenses were required.
 
-# **Funding statement (if applicable)**
+**Funding statement (if applicable)**
 
 This work was supported by funding from the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) through a doctorate scholarship (88887497855202000).
 
-# Acknowledgements (if applicable)
+**Acknowledgements**
 
 # Teaser Text
 
-# Author Contributions
+**Author Contributions**
 
-# Supporting Information
+**Supporting Information**
 
-# *References*
+# References
 <div id="refs"></div>
 
-# *Figures and tables with captions.*
+# Figures and tables with captions.
 
-# **Glossary**
+# Glossary
 
 + **acidification.** The process of soil or water becoming more
 acidic, with a loss of base cations (calcium, magnesium,
@@ -366,14 +372,3 @@ of its detection [enc.an.mod]
 
 + **tapeta.** *to be defined*
 
-# Commits
-
-[^1]: See Glossary.
-
-[^2]: Pensar se devo botar os Moluscks.
-
-[^3]: Falar do significado de "a abundâcia de quítons crescer na raiz quadrada da cobertura de bryozoários", na Discussão ?
-
-[^4]: or "...suggesting a preference for habitats with greater coverage of fluorescent substrate, particularly along the vertical boulder faces." 
-
-[^5]: put "habitats" or "ecossystems"??
