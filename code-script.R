@@ -1,9 +1,12 @@
 #++++++++++++++++++++++++#
-# Doutorado - UFSC
-# Chapter 3: Ecology of chitons
+# Article:  Lighting up boulder reefs: Influence of fluorescent substrates on the distribution of biofluorescent chitons.Doutorado - UFSC
+# Grimaldi et al.
 #
-# Script for: "chitons.eco.data"
-#++++++++++++++++++++++++#
+# Script for: "chitons.data"
+#==========================#
+
+
+# Session Info ------------------------------------------------------------
 
 tinytex::install_tinytex()
 
@@ -13,22 +16,19 @@ print(sI, RNG = FALSE, locale = FALSE)
 utils::sessionInfo()
 sessioninfo::session_info()
 
-#install.packages("usethis")
-usethis::create_project("~/Documents/R sessions/Chiton Ecology/")
 
-# GIT & GITHUB ####
+# Packages --------------------------------------------------------
 
-usethis::use_git() # 2 "Yeah" / 3 "Yes"
-
-# gitcreds::gitcreds_set() # Cole o Token. Basta uma unica vez
-
-usethis::use_github()
+#install.packages(c("MuMIn", "DHARMa",)
+install.packages("vegan")
+install.packages("lattice")
 
 
-citation()
-citation("MuMIn")
-# Packages ####
-install.packages("MuMIn")
+
+#citation()
+#citation("MuMIn")
+
+#install.packages("MuMIn")
 library(DHARMa) # To validate model
 library(glmmTMB) # To fit GLMM model zero-inflated
 library(car) # For leveneTest and vif model
@@ -53,148 +53,65 @@ install.packages("HH")
 library(HH)
 vif(data)
 
-# Importing data ####
+# Importing data ----
 
+#macro <- read.csv("rockside.csv", sep=";",dec=".", header=T)
+#str(macro)
+#macro$fSite <- factor(macro$Site)
 
-macro <- read.csv("rockside.csv", sep=";",dec=".", header=T)
-str(macro)
-macro$fSite <- factor(macro$Site)
-
-side <- read.csv("chitons.data.csv", sep=";",dec=".", header=T)
+side <- read.csv("chitons.data.csv", sep = ";", dec = ".", header = T)
 str(side)
 side$fSite <- factor(side$Site)
 
-
-# Data Sets Variables ####
-
-## Data set: "data"
-### A. Response Variable:
-# + "Chiton_F": abundance of fluorescent chitons (Ischonoplax pectinata)
-
-### B. Explanatory Variable:
-# + "Site": study sites
-# + "Samp.Time": sampling time (min)
-# + "Temp": water temperature (°C)
-# + "Wt.level": water level in relation to the base of the boulder (cm)
-# + "Weight": boulder weight (Kg)
-# + "Area.total": boulder surface area (cm2)
-# + "Ara.lateral": exposed side surface area (cm2)
-# + "Cov.Flu": coverage of living fluorescent substrates on the side of the boulder (%)
-# + "Cov.DeathCCAPey": coverage of no living fluorescent substrates (%)
-# + "Cov.Others": coverage of other substrates, e.g. bare rock, 'mucus', others (%)
-# + "Cov.Asc": ascidians cover (%)
-# + "Cov.Bryo": briozoans cover (%)
-# + "Cov.Spong": sponges cover (%)
-
-## Data set:"macro"
-
-# + Asci:
-# + Barnacle:
-# + Bival:
-# + Brittle:
-# + Bryo:
-# + Cerithium:
-# + Coral:
-# + Crabs:
-# + C.merca:
-# + Fissu:
-# + Flatworms:
-# + Gastrop:
-# + Hermit:
-# + L.nassa:
-# + Not.ident:
-# + N.virgi
-# + P.pusio:
-# + Shrimp:
-# + Spong:
-# + T.viri:
-# + Urchins:
-# + Worms:
-# + Zoanthus:
-
-str(data)
-summary(data)
-summary(data[,3:17])
-
-# Data exploration ####
+# Data exploration ----
 
 # Missing data ?
-summary(data) # NO
+summary(side) # NO
 
 # Balanced sampling ?
-tapply(data$Chitons,data$fSite,length) # YES
+tapply(side$Chitons, side$fSite, length) # YES
 
-# Outliers Y & X
+# Outliers Y & X ?
+boxplot(side[, 2:17])
+boxplot(sqrt(side[, 2:17]))
 
-boxplot(data$Bryo.cover)
-
-boxplot(data[,2:17])
-boxplot(sqrt(data[,2:17]))
-boxplot(decostand(data[,2:17],method="standardize"))
-
-boxplot(env.z)
-Z<-data[,3:17]
+library(vegan)
+boxplot(decostand(side[, 2:17], method = "standardize"))
 
 library(lattice)
-dotplot(as.matrix(data[,2:17]), groups = FALSE,
-        strip = strip.custom(bg = 'white',
-                             par.strip.text = list(cex = 0.8)),
+dotplot(as.matrix(side[, 2:17]),
+        groups = FALSE,
+        strip  = strip.custom(bg = 'white', par.strip.text = list(cex = 0.8)),
         scales = list(x = list(relation = "free"),
                       y = list(relation = "free"),
                       draw = FALSE),
-        col = 1, cex  = 0.5, pch = 16,
+        col  = 1,
+        cex  = 0.5,
+        pch  = 16,
         xlab = "Value of the variable",
         ylab = "Order of the data")
 
-dotplot(as.matrix(data$Samp.time))
-plot(data$Others)
-dotchart(data$Others, xlab = "Wing length (mm)",
-         ylab = "Order of the data")
+dotplot(as.matrix(side$Samp.time))
 
-dotchart(as.matrix(data$Bryo.cover), xlab = "Wing length (mm)",
-         ylab = "Order of the data")
+plot(Chitons ~ Samp.time, data = side)
+identify(side$Chitons ~ side$Samp.time) #23
+#View(side)
 
-identify(as.matrix(data$Others))
-
-plot(Chitons~Samp.time, data=data)
-identify(data$Chitons~data$Samp.time) #29
-View(data)
-
-# Vamos anasila-la em isolado
-
-# Make the coplot
-coplot(Chitons ~ Bryo.cover | Site, data=data, ylab = "Abudance",
-       xlab = "Cover Fluoescence (%)",
-       panel = function(x, y, ...) {
-         tmp <- lm(y ~ x, na.action = na.omit)
-         abline(tmp)
-         points(x, y) })
-
-library(beeswarm)
-beeswarm::beeswarm(Chitons ~ Bryo.cover,data=data)
-beeswarm::beeswarm(Bryo.cover ~ Site,data=data, col="red", pch=16, method="swarm")
-
-dotchart(macro$Area.lateral, main = "AREA", group = macro$fSite)
-
-stripchart(Bryo.cover ~ Site,data=data, method="stack")
-stripchart(Chitons ~ Bryo.cover,data=data, method="stack")
-summary(data$Others)
 
 # Percentage of occupied boulders?
-
-boulders <- length(data$Chitons)
-occupied <- length(data$Chitons[data$Chitons!=0])
+boulders   <- length(side$Chitons)
+occupied   <- length(side$Chitons[side$Chitons != 0])
 percentage <- (occupied*100)/boulders
 percentage # 36.6 % occupied boulders
 
-# Chapman 2005 encontrou valor similar (30% de ocupacao)
+# Chapman (2005) find similar values (Occupancy ~30%).
 
 # Total chiton abundance:
-sum(data$Chitons) # 137
+sum(side$Chitons) # 137
 
 # Encounter rate
-enc.rate <- sum(data$Chitons)/sum(data$Samp.time)
-enc.rate
+enc_rate <- sum(side$Chitons)/sum(side$Samp.time)
+enc_rate
 
 # Chiton abundance/ reef:
 tapply(data$Chitons,data$fSite,sum) # Buzios eh a maior abundancia
@@ -291,7 +208,6 @@ fligner.test(data$Chitons ~ data$fSite) # H0 aceita (Homocedastica)
 
 library(car)
 leveneTest(Chitons ~ fSite, data=data, center=mean) # H0 aceita (Homocedastica)
-
 
 
 
