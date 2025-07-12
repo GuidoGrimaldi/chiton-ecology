@@ -64,13 +64,13 @@ Fluorescence is a natural physical process in which light absorbed at shorter wa
 Despite being a common trait, the ecological and evolutionary functions of fluorescence remain incompletely understood [@iriel2010; @marshall2017; @whitcher2024]. Various hypothesis have been proposed, including communication [@meadows2014; @kalb2015; @whitcher2024a], prey and pollinator attraction [@thorp1975; @gandia-herrero2005; @kurup2013; @haddock2015], symbiont recruitment [@aihara2019], camouflage [@wucherer2014; @gruber2016d; @debrauwer2016c], mate attraction [@pearn2001; @arnold2002], and enhancement of visual contrast in structurally complex or dim light environments [@bitton2017; @protzel2021a]. These functions vary among species and habitat, reflecting the diversity of ecological contexts in which fluorescence occurs. In marine systems fluorescence, especially the red one, appears to be widespread among cryptobenthic animals [@anthes2016; @harant2017; @michiels2018; @park2019].  However, the ecological consequences of fluorescence in benthic organisms, especially those inhabiting heterogeneous substrates, remain largely unexplored.
 
 
-Intertidal and shallow subtidal reefs are dynamic habitats characterized by rapid changes in light availability and quality due to tidal cycles, water movement, depth, and the structural complexity of the substrate and overlying algal canopy [@cuthill2019; @nilsson2022].This dynamics creates a complex of light conditions that can influence how organisms perceive and interact with their surroundings [@matchette2018; @matchette2020]. In such enviroments, visual cues play a key role in habitat selection, spatial navigation, communication and species interactions [@attwell2021; @drerup2024]. For benthic organisms in particular, which often depend on close contact with the substrate for protection, feeding, and reproduction, the ability to detect and respond to visual cues in their immediate environment can strongly influence patterns of microhabitat use and species distribution [@mason2011; @matsumura2014; @sumner-rooney2021].
+Intertidal and shallow subtidal reefs are dynamic habitats characterized by rapid changes in light availability and quality due to tidal cycles, water movement, depth, and the structural complexity of the substrate and overlying algal canopy [@cuthill2019; @nilsson2022]. This dynamic creates a complex of light conditions that can influence how organisms perceive and interact with their surroundings [@matchette2018; @matchette2020]. In such environments, visual cues play a key role in habitat selection, spatial navigation, communication and species interactions [@attwell2021; @drerup2024]. For benthic organisms in particular, which often depend on close contact with the substrate for protection, feeding, and reproduction, the ability to detect and respond to visual cues in their immediate environment can strongly influence patterns of microhabitat use and species distribution [@mason2011; @matsumura2014; @sumner-rooney2021].
 
 
 Chitons, or polyplacophorans, are a group of marine mollusks known for their slow movement and strong association with hard substrates [@eernisse2007; @parkhaev2017]. They possess an eight-plate shell equipped with various sensory receptors that are highly sensitive to light [@li2015; @liu2022b]. Some species even have specialized '*shell eyes*' capable of image formation and polarization vision [@speiser2011; @speiser2014; @kingston2018; @chappell2023]. This sensory-integrated armor likely contributed to their survival through  major climate changes and transformation of the  Earth’s surface over geological time [@wanninger2019]. Many chiton species are strongly associated with calcareous red algae [@steneck1986; @littler1995], which contain high concentrations of fluorescent pigments in their tissue [@glazer1994]. In boulder reef, red crustose algae are abundant along the edges of intertidal boulders [@liversage2016], where  chiton species are often observed crawling and feeding on the side surfaces [@yoshioka2006; @aguilera2012]. However, the chiton *Ischnoplax pectinata* (G. B. Sowerby II, 1840) stands apart from the most other species, as its shells exhibit fluorescence when exposed to narrow light spectra [@grimaldi2023], suggesting a potential link between organism and habitat fluorescence that warrants investigation.
 
 
-Despite growing interest in biofluorescence, few studies have addressed how fluorescent substrates influence habitat selection and distribution patterns of benthic invertebrates [@matsumura2014]. In particular, the relationship between fluorescent backgrounds and the distribution of biofluorescent chitons in intertidal reef environments remains poorly understood. This study aims to fill this gap by exploring whether the coverage of fluorescent substrates on the sides of boulders influences the abundance of the fluorescent chiton *I. pectinata* along intertidal boulder reefs. We hypothesize that: (1) boulders with a higher percentage of fluorescent substrate cover on their side surfaces will host a greater abundance of chitons, and (2) this effect it not driven by a specific species of encrusting algae, but consistent across all fluorescent substrates.
+Despite growing interest in biofluorescence, few studies have addressed how fluorescent substrates influence habitat selection and distribution patterns of benthic invertebrates [@matsumura2014]. In particular, the relationship between fluorescent backgrounds and the distribution of biofluorescent chitons in intertidal reef environments remains poorly understood. This study aims to fill this gap by exploring whether the coverage of fluorescent substrates on the sides of boulders influences the abundance of the fluorescent chiton *I. pectinata* along intertidal boulder reefs. We hypothesize that: (1) boulders with a higher percentage of fluorescent substrate cover on their side surfaces will host a greater abundance of chitons, and (2) this effects it not driven by a specific species of encrusting algae, but consistent across all fluorescent substrates.
 
 
 # Material and Methods
@@ -102,7 +102,7 @@ We organized our dataset into ten explanatory variables. Fluorescent substrates 
 A data exploration analysis was conducted following the protocol of @zuur2010 (see Supplementary Material A). To assess differences among reefs, we used the Kruskal-Wallis test (hereafter as KW test), followed by Dunn’s *post-hoc* test with Bonferroni correction. Correlations among variables were evaluated using Kendall’s tau coefficient. To minimize multicollinearity, Variance Inflation Factor (VIFs) were calculated, and the variable ‘*Unflu.cover*’ was excluded to ensure all VIF values remained below 2 [@zuur2010].
 
 
-For model building, we opted for a top-down selection strategy [@west2022]. An initial full model was fitted, excluding cnidarian, polychaete, and mollusk variables due to their low cumulative cover (<1%). Given that site-level effect were not the objective of our study, we considered including '*Site*' as a random factor. The model was then simplified by  sequentially removing non-significant fixed effects (p ≥ 0.05), retaining only those variables essential for maintaining the model’s optimal fit (@zuur2011; see Supplementary Material B). 
+For model building, we opted for a top-down selection strategy [@west2022]. An initial full model was fitted, excluding cnidarian, polychaete, and mollusk variables due to their low cumulative cover (<1%). Given that site-level effect were not the objective of our study, we considered including '*Site*' as a random factor. The model was then simplified by  sequentially removing non-significant fixed effects (p ≥ 0.05), retaining only those variables essential for maintaining the model’s optimal fit [@zuur2011, see Supplementary Material B]. 
 
 
 Model selection was based on the Bayesian Information Criterion (BIC), with a decrease in ΔBIC ≥1 interpreted as a substantial improvement in model performance [@burnham2002]. Bayesian model weights (ranging from 0 to 1) were calculated to evaluate the relative plausibility of each candidate model. Nested models were compared using likelihood ratio test via ANOVA, incorporating corrections for testing on the boundary as recommended by @zuur2011. 
@@ -118,7 +118,7 @@ To futher explore whether the observed effect reflected a species-specific relat
 
 ## General characterization and comparison among reefs
 
-A total of 137 chitons were recorded, with adults comprising 95.6% (n=131) of the regional population. Juvenile chitons, 1°-5° developmental stage (Jardim, 2015), accounted for 4.4% (n=6), resulting in a ratio of one juvenile every 20 adults. Chitons occupied 36.6% (n=44) of the boulders sampled, with an encounter rate of approximately nine chitons per hour. During sampling, only eight individuals were observed active on the side of the boulders. At the reef scale, Búzios showed a significantly higher chiton abundance compared to other locations (p<0.01, KW test), with an average density of 3.60 chitons per boulder (Table 1). Significant variation was observed in water levels (mean $\pm$ SD: 37.9 $\pm$ 31.8 cm, p<0.01, KW test) and water temperature (30.7 $\pm$ 1.5 °C, p<0.01, KW test). The boulders had an average weight of 7.0 $\pm$ 6.3 kg, ranging from 1.5 to 25 kg, with no significant weight differences across reefs (p=0.53, KW test). Similarly, estimated surfaces areas showed consistent values across reefs (267 $\pm$ 144 cm^2^, p=0.70, KW test).
+A total of 137 chitons were recorded, with adults comprising 95.6% (n=131) of the regional population. Juvenile chitons, 1°-5° developmental stage (Jardim, 2015), accounted for 4.4% (n=6), resulting in a ratio of one juvenile every 20 adults. Chitons occupied 36.6% (n=44) of the boulders sampled, with an encounter rate of approximately nine chitons per hour. During sampling, only eight individuals were observed active on the side of the boulders. At the reef scale, Búzios exhibited a significantly higher abundance of *I. pectinata* compared to the other sites (p<0.01, KW test), with an average density of 3.60 individuals per boulder (Table 1). This site also showed the highest levels of individual aggregation, with up to 15 chitons recorded on a single boulder, whereas in the other reefs, no boulder harbored more than three individuals. Significant variation was observed in water levels (mean $\pm$ SD: 37.9 $\pm$ 31.8 cm, p<0.01, KW test) and water temperature (30.7 $\pm$ 1.5 °C, p<0.01, KW test). The boulders had an average weight of 7.0 $\pm$ 6.3 kg, ranging from 1.5 to 25 kg, with no significant weight differences across reefs (p=0.53, KW test). Similarly, estimated surfaces areas showed consistent values across reefs (267 $\pm$ 144 cm^2^, p=0.70, KW test).
 
 TABLE 1
 
@@ -130,11 +130,100 @@ The exposed surface area of the boulder sides averaged 222 $\pm$ 121 cm^2^, with
 Our best model reveals that chiton abundance significantly increases with higher percentages of fluorescent substrate on the sides of the boulders, regardless of reefs characteristics (Table 3). Specifically, chiton’s abundance increases at a rate of 0.02 chitons per percentage of fluorescent substrates (ziGLMM Poisson, z=3.11, SE=0.01, p=0.002, Figure 2). The square root of bryozoan cover was essential for maintaining the structure of the best-fitted model. However, its influence on chitons was interpreted with parsimony, as it was close to the significance threshold (ziGLMM Poisson, z=1.96, SE=0.11, p=0.049).
 
 
-When assessing the species-specific relationship between chitons and red crust algae, algal cover did not predict a higher likelihood of chiton abundance on boulders. Instead, bryozoan cover emerged as the key predictor, showing a proportional linear increase in chiton abundance as bryozoan cover expanded on the boulder sides (Tabela 3). This relationship corresponds to a growth rate of 0.06 chitons per percentage increase of bryozoan cover (GLMM Negative Binomial, z=2.28, SE=0.03, p=0.022).
+When assessing the species-specific relationship between chitons and red crust algae, algal cover did not predict a higher likelihood of chiton abundance on boulders. Instead, bryozoan cover emerged as the key predictor, showing a proportional linear increase in chiton abundance as bryozoan cover expanded on the boulder sides (Tabela 2). This relationship corresponds to a growth rate of 0.06 chitons per percentage increase of bryozoan cover (GLMM Negative Binomial, z=2.28, SE=0.03, p=0.022).
 
 
 # Discussion
 
+Our findings reveal that the abundance of the biofluorescent chiton *Ischnoplax pectinata* increases significantly with the coverage of fluorescent substrates on the sides of intertidal boulders, suggesting that fluorescence of red crust algae may serve as a visual cue to guiding microhabitat selection or site fidelity. This relationship remained robust across reef sites and was not driven by a particularly species of red crust algae, supporting the hypothesis that chitons respond to the general presence of fluorescent surfaces rather than to species-specific algal traits. Unexpectedly, when substrate types were analyzed separately, bryozoan cover emerged as a significantly predictor of chiton abundance, indicating that not-fluorescent biological components of substrate may also influence habitat preferences, either independently or in combination with fluorescence.  Together, these results suggest that *I. pectinata* responds to a complex suite of benthic cues, with visual signals likely playing an important, but not exclusive, role in determining its spatial distribution.
+
+
+Previous studies on boulder-chitons species have also showed non-random distribution patterns, often characterized by strong aggregation on a limited number of available boulders [@underwood1996; @chapman2002; @liversage2013]. In most case, the majority of boulders remains unoccupied while several individuals clustered on just a few [@grayson2004], However, patterns appear to vary among species and habitat [@liversage2013; @mendonça2015]. Based in a genetic study, @palmer2012 demonstrated that these aggregations are not genetically structured, as new individuals contribute to genetic diversity within the population [@palmer2012]. This is notable, as such clustering could be expected to increase intraspecific competition for space or food resource [@chelazzi1983]. It remains unclear whether these aggregations are primarily driven by the availability of food, by social behavior such attraction to conspecifics, or by specific habitat characteristics such geological rock type, boulder shape, their spatial arrangement [@takada1999; @lehir2015]. Similar aggregation behavior observed in intertidal gastropods has been interpreted as strategy to reduce disiccation stress [@levings1983] or to reduce the effects of wave action [@feare1971]. Although we did not explicitly assess wave acction disturbance regime in this study, aggregation of *I. pectinata* were only found at the Búzios reef, a site with water column height and potentially higher exposure to wave actions.
+
+
+It is possibly that the biofluorescence observed in the shell of *I. pectinata* originate from a diet rich in red crust algae. Many studies have reported the presence of fleshy and coralline red algae in the gut content of several chiton species [@demopulos1975; @nishi1975; @piercy1987; @camus2012], indicating a mutualistic relationship in which chiton grazing may enhance algal biomass [@littler1995]. These algae often contain important fluorescent pigments such as chlorophyll a and carotenoids, that may be incorporated into the shell structure during biomineralization [@wolf1967; @peebles2017]. Particularly, carotenoids are known to be widespread fluorophore in both invertebrates and vertebrate [@lagorio2015; @williams2016], including in many chiton species [@tushima1989; @peebles2017]. However, not all organisms are biofluorescent, the fluorescence proprieties of fluorophores are influenced by  intrinsic factors (*e.g.* conjugation length, functional groups) and environments conditions such as solvent polarity, colored dissolved organic matter [@mazel2017; @chen2018]. Despite these potential links, establishing a direct pathway between red algae consumption and chiton shell fluorescence is challenging, given that chiton are commonly generalist omnivores [@sigwart2017]. Though their radula, a muscular belt-like strap equipped with rows of iron oxide-mineralized teeth [@joester2016], chitons ingest plant and animal materials indiscriminately (the most part sediments), a process commonly referred to as ‘*bulldozing*’ [@fulton1975; @langer1983; @smith1997a; @liversage2019] . 
+
+
+Another plausible explanation underlying the observed association between *I. pectinata* and fluorescent substrates is that larval settlement may be guided by a combination of chemical and visual cues operating at diferent spatial scales. Over longer distances, chiton planktonic larvae (*i.e.* trochophores) may rely on waterborne chemical cues released by red crust algae to detect suitable habitats, a mechanisms observed to crustose coralline algae [@barnes1973; @rumrill1983]. As trochophore larvae approach the substrate, however, the enhanced surface brightness generated by algal fluorescence under specific condition could provide a short-range visual cue that facilitates microhabitat selection and settelement, such as demostrated to barnacles larvae [@matsumura2014]. This multimodal sensorial strategy may be particularly advantageous in complex intertidal environments, where patch quality can vary in many aspects over small spatial-temporal scales [REF].
+
+Bryozoans are organisms commonly found in boulder-dwelling communities, often competing with other encrusting animals such as ascidians, sponges, and hydroids for limited space on har substrates, often forming dense colonies that can exclude or overgrow slower-growing taxa.
+
+As chiton larvae, bryozoan larvae possess photoreceptive structures and are known to respond to light cues
+positively phototactic
+pigmented spots.
+
+Paragrafo 4: Bryozoans
+
+Briozoários são componentes comuns das comunidades de animais encrustantes dos boulder. Els normamente copetem por espaço com outras espécies  de animais incrustantes como ascidias e esponjas. Pedaços de briozoários podem ser encontrados no estomago de inumeras especies de quitons 
+
+Esses animais foram reportados como item alimentares de inumeras especies de chitosn, larvas de quitons 
+
+Although crustose coralline algae and bryozoans are frequently found in the diets of many chiton species (Nishi, 1975; Piercy, 1987; Gordon, 1972; Byrnes and Stachowicz, 2009), it is possible that chitons primarily target smaller associated organisms, such as copepods, amphipods, or diatoms, which inhabit these substrates (Osman and Haugsness, 1981; Lidgard, 2008). To better understand the feeding ecology of I. pectinata, examining its intestinal and radula morphology may provide more definitive insights than stomach/ gut content analysis alone (Sigwart and Schwabe, 2017).
+. Laboratory experiments have shown that trochophore larvae actively select settlement site on crustose coralline algae (Barnes and Gonor, 1973; Rumrill and Cameron, 1983) or colonies of bryozoans (Creese, 1986). 
+Ocean acidification could affect biomineralizing organisms on boulder reef differently, with some being more vulnerable than others. Crustose coralline algae, for instance, are particularly susceptible to these changes (Kamenos et al., 2016), while other lineages, such as Peyssonelia and bryozoans, have demonstrated adaptative responses (Linares et al., 2015; Swezey et al., 2017).
+
+Bryozoans are a dietary component of many chiton species, even if only in small quantities (gordon1972?, lidgard2008?, byrnes2009?, sigwart2017?). They likely also constitute part of the diet of I. pectinata, playing a crucial role in its ecology. An indirect approach as studying the stomach/gut contents across different seasons and life stages could provide evidence to support this hypothesis. Additionally, a morphological study of bryozoan colonies can also offer clues, as certain species develop defensive spines under predation pressure (harvell1998?). However, chitons may not be feeding on the bryozoans themselves but rather on the associated copepods, amphipods or hydroids (osman1981?, lidgard2008?). Like many other mollusks, chitons feed with a beltlike, muscularized strap bearing rows of teeth mineralized with iron oxides, known as the radula (Joester and Brooker 2016). Herbivorous chitons use their radula to scrape algae off rock (or tear pieces of macroalgae), often leaving scars on hard surfaces such as crustose coralline algae or rocks (Littler et al. 1995). Thus, although chiton species exhibit a variety of feeding habits (even xylophagous, (duperron2013?); (sigwart2017?)), their gut contents often include a diverse array of items, including rock fragments, sand, and detritus (Glynn 1970, Fulton 1975, langer1983?, demopulos1975?, barnawell1960?). This unintentional ingestion, known as “bulldozing”, may obscure the role of bryozoans as a food source to I. pectinata when compared to more voluminous elements in stomach contents, such calcareous algae.
+
+
+
+
+Paragrafo 5: Limitations
+
++ the observational nature of study does not clearly separate these effects. For instance, a positive correlation between red crust algae and chiton abundance cannot determine whether chitons are attracted by the food source or the camouflage effect of fluorescence. A experimental design to direct test isolating fluorescence would be necessary to draw firmer conclusions.
+
++ Restricted spatial scale and temporal window.
+
++ Possible unmeasured environmental variables (e.g., predation, hydrodynamics).
+
++ Need for fluorescence quantification under ambient light and behavioral experiments.
+
+
+Paragrafo 6:  Future Directions
+
++ Experimental testing of fluorescence detection and preference in chitons.
+
++ Expanded surveys to include non-fluorescent chiton species for comparative insights.
+
++ spectrochemical study of its shell and diet
+
++ Incorporation of spectral reflectance data and light field measurements.
+
++ Broader implications for reef conservation, especially with shifting algal compositions under climate change.
+
+
+Paragrafo 7:  Conclusions
+
++ Reiterate that I. pectinata shows increased abundance on fluorescent substrates, likely influenced by visual ecology.
+
++ Emphasize novelty of linking chiton distribution to substrate fluorescence.
+
++ Highlight potential for further research into how benthic invertebrates perceive and respond to fluorescent cues.
+
+
+
+
+
+
+larval attrating
+
+
+
+
+
+
+
+
+
+Chitons são organismos sensory especial luz ,e possivel que usem pistas visuais (i.e britgness) porducidas por processos biolfuroescentes passi
+Hypothesis that chitons may use fluorescence passively or actively in sensory processing.
+
+
+
+In contrast, when we modeled the effects of individual substrate types, fluorescent algae were no longer predictive of chiton abundance, and bryozoan cover unexpectedly emerged as a significant factor. Although this result was not anticipated, it suggests that additional biological or structural features associated with bryozoan-encrusted surfaces may influence chiton habitat use, either directly or in conjunction with other cues.
+
+...Moreover, the association between bryozoans and chiton abundance implies a more complex ecological interaction. Do red crust algae and bryozoans co-occur? If so, which is more likely to attract chitons? Is the fluorescence of red crust algae directly attracting chitons, or are chitons using it to locate prey?...
+
+=======
 The Western Atlantic chiton, Ischnoplax pectinata, is a mollusk species with limited biological knowledge, typically found beneath boulders in the intertidal reefs of northeastern Brazil. Like other intertidal organisms, its activity seems to be influenced by tidal and non-tidal rhythms. Boulder chiton species are often observed crawling and feeding on the side surfaces of boulders during twilight (Glynn, 1970; Yoshioka and Fujitani, 2006; Aguilera and Navarete, 2012). However, I. pectinata stands apart, as its shells exhibit fluorescence when exposed to short-wavelength light, such as blue and UV light (Grimaldi et al., 2023). This phenomenon suggests that light interacts with their shell surfaces in ways that differ from typical reflection (Johnsen, 2011). Red crust algae are abundant along the edges of intertidal boulders (Liversage, 2016) and contain high concentrations of fluorescent pigments in their composition (Glazer, 1994). Although the chiton-red algae association is well-documented, most studies have primarily focused on their trophic relationships, leaving other aspects largely unexplored (Sigwart, 2018). Here, we propose that the relationship between I. pectinata and red crust algae may involve a visual component, potentially serving as camouflage against visually guided predators. Specifically, we hypothesize that I. pectinata is more abundant on boulders with greater coverage of fluorescent substrates on their sides. To test this, we constructed statistical models to analyze field ecological data, investigating whether chitons abundance correlates with the percentage of fluorescent substrate coverage on boulder sides and whether this relation is influenced by a species-specific effect of red crust algae. Our best-fitting model showed a clear positive association between chiton abundance and the level of fluorescent substrate coverage on boulder sides. Notably, bryozoan cover was a significant stabilizing predictor in the model that included fluorescent substrate coverage. It also emerged as the main predictor of chiton abundance in models evaluating the specific role of red crust algae, suggesting it may have a critical or complementary role.
 
 Chitons species exhibit a wide range of feeding habits, including specialized strategies such as carnivory (McLean, 1962; Saito and Okutani, 1992), spongivory (Warrén2 and Klitgarrd, 1991), and xylophagy (Sirenko, 2004; Duperron et al., 2013). Despite this diversity, intertidal chitons are generally regarded as omnivorous browsers. Their gut contents often contain a diverse array of materials, including animals, plants, rock fragments, sand, and inorganic detritus (Demopulos, 1975; Fulton, 1975; Langer, 1978, 1983; Piercy, 1987; Camus, 2012). This broad range of ingested items is largely attributed to their feeding mechanism, which relies on a radula - a belt-like, muscular strap equipped with rows of iron oxide-mineralized teeth (Joester and Brooker 2016). This structure enables chitons to scrape and ingest materials indiscriminately, a process commonly referred to as ‘bulldozing’ (Smith and Otway, 1997; Liversage and Kotta, 2019). In the case of I. pectinata, its observed biofluorescence may result from the direct or accidental ingestion of red crustose algae, such as Lithothamnium spp. and Peyssonnelia spp. These algae are rich in phycobiliproteins, highly fluorescent compounds that might undergo biomineralization within the chiton's shell (Peebles et al., 2017). Although crustose coralline algae and bryozoans are frequently found in the diets of many chiton species (Nishi, 1975; Piercy, 1987; Gordon, 1972; Byrnes and Stachowicz, 2009), it is possible that chitons primarily target smaller associated organisms, such as copepods, amphipods, or diatoms, which inhabit these substrates (Osman and Haugsness, 1981; Lidgard, 2008). To better understand the feeding ecology of I. pectinata, examining its intestinal and radula morphology may provide more definitive insights than stomach/ gut content analysis alone (Sigwart and Schwabe, 2017).
@@ -177,10 +266,7 @@ Figure 2: Predicted chiton abundance as a function of fluorescent substrate cove
 
 # Table legends
 
-Table 1: Summary of key descriptive results by sites. Values (mean $\pm$ SD).
+Table 1: Summary of key descriptive results by sites. Values (mean $\pm$ SD). Superscript letters indicate Dunn's Kruskal-Wallis multiple comparison post-hoc test results with Bonferroni correction. Sites sharing the same letter do not show significant differences (p<0.05).
 
 
-Table 2: Results from Dunn’s Kruskal-Wallis Multiple comparison post-hoc test with Bonferroni correction. Site sharing the same letter are not significantly different (p<0.05).
-
-
-Table 3: Model selection results for chiton populations on boulders. Generalized linear mixed model (GLMM) were used to analyze the relationship between chitons abundance and substrate coverage percentages on the boulder’s sides, with separate considerations for fluorescent substrates and red crust algae. Models are ranked according to their ΔBIC value. Models in bold are the best fit.
+Table 2: Model selection results for chiton populations on boulders. Generalized linear mixed model (GLMM) were used to analyze the relationship between chitons abundance and substrate coverage percentages on the boulder’s sides, with separate considerations for fluorescent substrates and red crust algae. Models are ranked according to their ΔBIC value. Models in bold are the best fit.
