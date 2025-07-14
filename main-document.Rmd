@@ -3,13 +3,13 @@ title: "main-document"
 author: "G.Grimaldi"
 date: "`r Sys.Date()`"
 output:
-  html_document:
-    toc: no
-  pdf_document:
-    toc: no
   word_document:
     toc: no
     reference: stylo.docx
+  pdf_document:
+    toc: no
+  html_document:
+    toc: no
 bibliography: references.bib
 csl: csl_ecology.csl
 ---
@@ -52,7 +52,9 @@ Paulo Antunes Horta (Orchid: 0000-0001-7699-7589). Department of Botany, Federal
 
 # Abstract
 
-Boulder reefs are dynamic ecosystems characterized by their structural complexity and diversity communities of specialist species. Boulder dwellers organisms rely on sensory cues to evaluate habitat quality, particularly during critical processes such as larval settlement and adult dispersion. While research on boulder reefs has predominantly focused on the upper and lower surfaces of boulders, the ecological dynamics of the boulder sides remain understudied. The Western Atlantic chiton, *Ischnoplax pectinata*, is a biofluorescent mollusk commonly found beneath intertidal boulders in northeastern Brazil. These chitons exhibit three-dimensional movement on a boulder habitat, emerging at specific times to feed on the boulder sides. Red crust algae, commonly found along the edges of intertidal boulders, are rich in fluorescent pigments, suggesting a potential ecological link to chiton behavior and distribution. This study investigated whether chiton abundance correlates with the percentage of fluorescent substrate coverage on boulder sides and whether this relation is influenced by a species-specific effect of red crust algae, using statistical models to analyze field data. Results showed a positive association between chiton abundance and fluorescent substrate coverage, with bryozoan cover emerging as a critical stabilizing predictor. In models specifically assessing red crust algae, bryozoans were identified as the primary predictor of chiton abundance, suggesting a complementary ecological role. These findings support the hypothesis that the relationship between *I. pectinata* and red crust algae extends beyond a simple trophic interaction, involving visual and behavioral dynamics influenced by fluorescence. Understanding the ecological significance of fluorescence provides valuable insights into how visual environmental cues shape species interactions and ecosystem structure. This research underscores the importance of conserving rocky reef ecosystems to ensure their resilience and functional integrity amid global environmental change. By exploring these connections, researchers can uncover how climate-induced disruptions shape the structure and resilience of coastal reef ecosystems, offering guidance for their conservation in an era of rapid climatic changes.
+Biofluorescence is a widespread yet understidied phenomenon in marine benthic habitats. While the functional significance of biofluorescence has been explored in corals and some reef fishes, its ecological role for marine mollusks remains largely unknown. 
+Red crust algae, rich in fluorescent pigments, commonly grow along the edges of intertidal boulders. The Western Atlantic chiton, *Ischnoplax pectinata*, is a biofluorescent mollusk frequently found beneath boulders in intertidal reef of  northeastern Brazil. This suggest a  potential ecological link between these organisms. In this study, we investigated whether the coverage of fluorescent substrates on the sides of boulders influences the abundance of *I. pectinata* along intertidal boulder reefs. Using field surveys across multiple reefs, we quantified chiton abundance and the cover of both fluorescent and non-fluorescent substrates on the sides of different boulders. Our results reveal a positive association between the abundance of *I. pectinata* and the coverage of fluorescent red crust algae, particularly on vertical boulders surfaces. This pattern suggests a potential role for photic cues in microhabitat use, possibly mediated by food preference, camouflage, or attraction to fluorescence. Future research should incorporate behavioral experiments and spectral measurements to test how chitons perceive and respond to fluorescence under natural light conditions. By highlighting a novel link between substrate fluorescence and chitons distribution, this study opens new avenues for understanding the sensory ecology of benthic invertebrates and its implications for reef biodiversity. 
+
 
 **KEYWORDS:** Biofluorescence; Boulder fields; Ecology; Habitat selection; *Ischnoplax pectinata*; Polyplacophora; Visual cues. 
 
