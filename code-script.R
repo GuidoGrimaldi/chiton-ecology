@@ -22,8 +22,12 @@ sessioninfo::session_info()
 #install.packages(c("MuMIn", "DHARMa",)
 install.packages("vegan")
 install.packages("lattice")
+install.packages("car")
+install.packages("FSA")
+install.packages("rcompanion")
 
-
+library(FSA)  # to Dunn test
+library(rcompanion)
 
 #citation()
 #citation("MuMIn")
@@ -63,15 +67,32 @@ side <- read.csv("chitons.data.csv", sep = ";", dec = ".", header = T)
 str(side)
 side$fSite <- factor(side$Site)
 
-# Data exploration ----
+# 1. Data exploration ----
 
-# Missing data ?
+## 1.1. Is there missing data? ----
 summary(side) # NO
 
-# Balanced sampling ?
+## 1.2. Is the sampling balanced? ----
 tapply(side$Chitons, side$fSite, length) # YES
 
-# Outliers Y & X ?
+## 1.3. What percentage of boulders are occupied? ----
+boulders   <- length(side$Chitons)
+occupied   <- length(side$Chitons[side$Chitons != 0]) # 44
+percentage <- (occupied*100)/boulders
+percentage # 36.6 % occupied boulders
+
+# Chapman (2005) find similar values (Occupancy ~30%).
+
+## Total chiton abundance ----
+sum(side$Chitons) # 137
+
+## Encounter rate ----
+enc_rate <- sum(side$Chitons)/sum(side$Samp.time)
+enc_rate
+
+
+
+## 1.3. Outliers Y & X ? ----
 boxplot(side[, 2:17])
 boxplot(sqrt(side[, 2:17]))
 
@@ -98,66 +119,52 @@ identify(side$Chitons ~ side$Samp.time) #23
 #View(side)
 
 
-# Percentage of occupied boulders?
-boulders   <- length(side$Chitons)
-occupied   <- length(side$Chitons[side$Chitons != 0])
-percentage <- (occupied*100)/boulders
-percentage # 36.6 % occupied boulders
 
-# Chapman (2005) find similar values (Occupancy ~30%).
-
-# Total chiton abundance:
-sum(side$Chitons) # 137
-
-# Encounter rate
-enc_rate <- sum(side$Chitons)/sum(side$Samp.time)
-enc_rate
-
-# Chiton abundance/ reef:
-tapply(data$Chitons,data$fSite,sum) # Buzios eh a maior abundancia
+## Chiton abundance/ reef ----
+tapply(side$Chitons, side$fSite, sum) # Buzios is the biggest abundance
 
 # Density/reef
-
-dens <- (tapply(data$Chitons,data$fSite,sum)/ tapply(data$Boulder.area,data$fSite,sum))*100
+dens <- (tapply(side$Chitons, side$fSite, sum) /
+           tapply(side$Boulder.area, side$fSite, sum))*100
 dens # ind/m^2
 
 
 # Zero trouble Y ?
 
 # Frequency plot
-table(data$Chitons)
-barplot(table(data$Chitons), ylim=c(0,100),
-        ylab="Frequency", xlab="Observed values")
+table(side$Chitons)
+barplot(table(side$Chitons), ylim = c(0, 100),
+        ylab = "Frequency", xlab = "Observed values")
 
 # How much zeros?
-sum(data$Chitons==0)/length(data$Chitons)*100
+sum(side$Chitons == 0) / length(side$Chitons)*100
 
 # Proporcao dos dados que sao iguais a zero eh 63.33%
 # Pode ser possível o uso de um modelos inflacionado por zeros.
 
 
 # Vamos olhar em um histograma com a distribuicao de probabilidade
-hist(data$Chitons, prob = T, breaks=15, ylim=c(0,1))
-rug(data$Chitons)
-lines(density(data$Chitons), col="blue")
+hist(side$Chitons, prob = T, breaks = 15, ylim = c(0,1))
+rug(side$Chitons)
+lines(density(side$Chitons), col = "blue")
 
 # Nossa variavel resposta apresenta uma distribuicao unimodal nao normal, ja esperada para
 # dados discretos (contagem).
 # Mas  vamos examinar...
 
 # Normality Y ?
-hist(data$Chitons)
+hist(side$Chitons)
 
 # Qual seria a distribuicao normal teorica a partir da media e desvio padrao da
 # abundancia observada ?
-curve(dnorm(x, mean=mean(data$Chitons), sd=sd(data$Chitons)), add=T, col="red")
+curve(dnorm(x, mean = mean(side$Chitons), sd = sd(side$Chitons)), add = TRUE, col = "red")
 
 # Possivelmente os dados estao inflados por zeros!! Mas nao nescessariamente.
 # Ver: Warton, D. I. (2005). Many zeros does not mean zero inflation: comparing the goodness-of-fit of parametric models to multivariate abundance data. Environmetrics 16(3), 275-289
 
 # Vamos ver em um QQ-plot:
-qqnorm(data$Chitons)
-qqline(data$Chitons, col="blue", lwd=2)
+qqnorm(side$Chitons)
+qqline(side$Chitons, col = "blue", lwd = 2)
 
 # Noossa!! Nem um pouco normal!
 
@@ -166,7 +173,7 @@ qqline(data$Chitons, col="blue", lwd=2)
 
 # QQ-plot com distribuicao Poisson
 library(car)
-qqPlot(data$Chitons, distribution="pois", lambda=mean(data$Chitons))
+qqPlot(side$Chitons, distribution = "pois", lambda = mean(side$Chitons))
 
 # Os dados caem fora do limite da distribuicao de Poisson.
 # E bem possivel que um glm Poisson, nao se ajuste bem aos dados.
@@ -181,7 +188,7 @@ qqPlot(data$Chitons, distribution="pois", lambda=mean(data$Chitons))
 # aceitando-se a hipotese alternativa de nao normalidade dos dados.
 
 # Vejamos:
-shapiro.test(data$Chitons) # NAO NORMAL
+shapiro.test(side$Chitons) # NAO NORMAL
 
 # Conforme vizualizados, nossa variavel resposta nao possui uma distribuicao normal,
 # portanto ha de se esperar que seus erros tambem nao sigam uma distribuicao normal
@@ -191,36 +198,35 @@ shapiro.test(data$Chitons) # NAO NORMAL
 
 # Conditional boxplot
 
-boxplot(Chitons~fSite, data=data)
-variancia <- tapply(data$Chitons,data$fSite,var)
+boxplot(Chitons~fSite, data = side)
+variancia <- tapply(side$Chitons,side$fSite,var)
 variancia
 
 # Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
 # menor variancia:
 
-variancia [2]/ variancia [1]  # A variancia de Buzios eh 66x maior que BF
+variancia[2] / variancia[1]  # A variancia de Buzios eh 66x maior que BF
 
 # Teste de Bartlett:
-bartlett.test(data$Chitons ~ data$fSite) # H0 aceita (Homocedastica)
+bartlett.test(side$Chitons ~ side$fSite) # H0 aceita (Homocedastica)
 
 # Teste de Fligner-Killeen:
-fligner.test(data$Chitons ~ data$fSite) # H0 aceita (Homocedastica)
+fligner.test(side$Chitons ~ side$fSite) # H0 aceita (Homocedastica)
 
 library(car)
-leveneTest(Chitons ~ fSite, data=data, center=mean) # H0 aceita (Homocedastica)
+leveneTest(Chitons ~ fSite, data = side, center = mean) # H0 aceita (Homocedastica)
 
 
-
-# Ha diferenca entre praias?
+# Ha diferenca entre praias? ----
 
 kruskal.test(Chitons ~ fSite,
-             data = data) # H0 rejeitada, ha diferenca entre praias
+             data = side) # H0 rejeitada, ha diferenca entre praias
 
 # Dunn test:
 library(FSA)
 DT = dunnTest(Chitons ~ fSite,
-              data=data,
-              method="bh")      # Adjusts p-values for multiple comparisons;
+              data   = side,
+              method = "bh")      # Adjusts p-values for multiple comparisons;
 
 DT
 
@@ -230,145 +236,59 @@ PT
 library(rcompanion)
 
 cldList(P.adj ~ Comparison,
-        data = PT,
+        data      = PT,
         threshold = 0.05)
 
 # De fato, Buzio eh diferente das demais praias
 
 
-# ~Sampling Time ####
-
-
-# Total chiton abundance:
-sum(data$Samp.time) # 137
-summary(data$Samp.time)
-sd(data$Samp.time)
-mean(data$Samp.time)
-# Chiton abundance/ reef:
-tapply(data$Chitons,data$fSite,sum) # Buzios eh a maior abundancia
-
-# Density/reef
-
-
-boxplot(data$Samp.time~data$fSite)
-beeswarm::beeswarm(Samp.time ~ Site,data=data)
-beeswarm::beeswarm(Samp.time ~ Site,data=data, col="red", pch=16, method="swarm")
-
-dotchart(data$Samp.time, main = "AREA", group = data$fSite)
-
-stripchart(Samp.time ~ Site,data=data, method="stack")
-
-
-hist(data$Samp.time, prob = T, ylim=c(0,1))
-lines(density(data$Samp.time), col="blue")
-
-library(rcompanion)
-
-x = residuals(model)
-
-plotNormalDensity(x,
-                  adjust = 1)
-
-hist(data$Samp.time)
-rug(data$Samp.time)
-
-
-tapply(data$Samp.time,data$Site,sum)
-tapply(data$Samp.time,data$Site,mean)
-tapply(data$Samp.time,data$Site,sd)
-
-# Normality test:
-shapiro.test(data$Samp.time) # Nao  normal
-
-# Homogeneity test:
-variancia <- tapply(data$Samp.time,data$fSite,var)
-variancia
-
-# Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
-# menor variancia:
-
-variancia [2]/ variancia [3]  # Buzios eh 2x maior...provavelmente homocedastico
-
-# Teste de Bartlett:
-bartlett.test(data$Samp.time ~ data$fSite) # H0 aceita (Homocedastica)
-
-# Teste de Fligner-Killeen:
-fligner.test(data$Samp.time ~ data$Site) # H0 aceita (Homocedastica)
-
-library(car)
-leveneTest(Samp.time ~ fSite, data=data, center=mean) # H0 aceita (Homocedastica)
-
-# Kruaskal-Wallis test:
-
-kruskal.test(Samp.time ~ fSite,
-             data = data) # H0 rejeitada, ha diferenca entre praias
-
-# Dunn test:
-library(FSA)
-DT = dunnTest(Samp.time ~ fSite,
-              data=data,
-              method="bh")      # Adjusts p-values for multiple comparisons;
-
-DT
-
-# Compact letter display:
-PT = DT$res
-PT
-library(rcompanion)
-
-cldList(P.adj ~ Comparison,
-        data = PT,
-        threshold = 0.05)
-
-boxplot(Chitons~fSite, data = data)
-
 # ~Temperature ####
 
 ## Global Water Temperature
-summary(data$Temp)
-mean(data$Temp)
-sd(data$Temp)
+summary(side$Temp)
+mean(side$Temp)
+sd(side$Temp)
 
 ## Water Temperature by Reef
-tapply(data$Temp,data$Site,mean)
-tapply(data$Temp,data$Site,sd)
+tapply(side$Temp, side$Site, mean)
+tapply(side$Temp, side$Site, sd)
 
-boxplot(Temp~Site, data = data)
-dotchart(data$Temp, xlab = "Water temperature (°C)", group=data$fSite)
+boxplot(Temp~Site, data = side)
+dotchart(side$Temp, xlab = "Water temperature (°C)", group = side$fSite)
 
 # Normality test:
-shapiro.test(data$Temp) # Nao  normal
+shapiro.test(side$Temp) # Nao  normal
 
 # Homogeneity test:
-variancia <- tapply(data$Temp,data$fSite,var)
+variancia <- tapply(side$Temp, side$fSite, var)
 variancia
 
 # Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
 # menor variancia:
 
-variancia [1]/ variancia [2]  # BF eh 3.66x maior...provavelmente homocedastico
+variancia[1] / variancia[2]  # BF eh 3.66x maior...provavelmente homocedastico
 
 # Teste de Bartlett:
-bartlett.test(data$Temp ~ data$fSite) # H0 rejeitada (Heterocedastico)
+bartlett.test(side$Temp ~ side$fSite) # H0 rejeitada (Heterocedastico)
 
 # Teste de Fligner-Killeen:
-fligner.test(data$Temp ~ data$fSite) # H0 rejeitada (Heterocedastico)
+fligner.test(side$Temp ~ side$fSite) # H0 rejeitada (Heterocedastico)
 
 library(car)
-leveneTest(Temp ~ fSite, data=data, center=mean) # H0 rejeitada (Heterocedastico)
+leveneTest(Temp ~ fSite, data = side, center = mean) # H0 rejeitada (Heterocedastico)
 
 # Kruaskal-Wallis test:
 
 kruskal.test(Temp ~ Site,
-             data = data) # H0 rejeitada, ha diferenca entre praias
+             data = side) # H0 rejeitada, ha diferenca entre praias
 
 # Dunn test:
 
 library(FSA)
 
 DT = dunnTest(Temp ~ fSite,
-              data=data,
-              method="bh")      # Adjusts p-values for multiple comparisons;
+              data   = side,
+              method = "bh")      # Adjusts p-values for multiple comparisons;
 
 DT
 
@@ -381,30 +301,31 @@ PT
 library(rcompanion)
 
 cldList(P.adj ~ Comparison,
-        data = PT,
+        data      = PT,
         threshold = 0.05)
 
+
 # ~Wt.level ####
-summary(data)
-mean(data$Wt.level)
-sd(data$Wt.level)
+summary(side)
+mean(side$Wt.level)
+sd(side$Wt.level)
 
-min(data$Wt.level)
+min(side$Wt.level)
 
-boxplot(Wt.level~Site, data = data)
+boxplot(Wt.level~Site, data = side)
 
-plot(Temp~fSite, data=data)
+plot(Temp~fSite, data=side)
 
-dotchart(data$Wt.level, xlab = "Water temperature (°C)", group=data$fSite)
+dotchart(side$Wt.level, xlab = "Water temperature (°C)", group=side$fSite)
 
-tapply(data$Wt.level,data$fSite,mean)
-tapply(data$Wt.level,data$fSite,sd)
+tapply(side$Wt.level,side$fSite,mean)
+tapply(side$Wt.level,side$fSite,sd)
 
 # Normality test:
-shapiro.test(data$Wt.level) # Nao  normal
+shapiro.test(side$Wt.level) # Nao  normal
 
 # Homogeneity test:
-variancia <- tapply(data$Wt.level,data$fSite,var)
+variancia <- tapply(side$Wt.level,side$fSite,var)
 variancia
 
 # Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
@@ -413,25 +334,25 @@ variancia
 variancia [2]/ variancia [4]  # Buzios eh 20x maior...provavelmente heterocedastico
 
 # Teste de Bartlett:
-bartlett.test(data$Wt.level ~ data$fSite) # H0 rejeitada (Heterocedastico)
+bartlett.test(side$Wt.level ~ side$fSite) # H0 rejeitada (Heterocedastico)
 
 # Teste de Fligner-Killeen:
-fligner.test(data$Wt.level ~ data$fSite) # H0 rejeitada (Heterocedastico)
+fligner.test(side$Wt.level ~ side$fSite) # H0 rejeitada (Heterocedastico)
 
 library(car)
-leveneTest(Wt.level ~ fSite, data=data, center=mean) # H0 rejeitada (Heterocedastico)
+leveneTest(Wt.level ~ fSite, data=side, center=mean) # H0 rejeitada (Heterocedastico)
 
 # Kruaskal-Wallis test:
 
 kruskal.test(Wt.level ~ Site,
-             data = data) # H0 rejeitada, ha diferenca entre praias
+             data = side) # H0 rejeitada, ha diferenca entre praias
 
 # Dunn test:
 
 library(FSA)
 
 DT = dunnTest(Wt.level ~ fSite,
-              data=data,
+              data=side,
               method="bh")      # Adjusts p-values for multiple comparisons;
 
 DT
@@ -446,21 +367,21 @@ cldList(P.adj ~ Comparison,
         data = PT,
         threshold = 0.05)
 
-boxplot(Wt.level~fSite, data = data)
+boxplot(Wt.level~fSite, data = side)
 
 # ~Weight ####
-mean(data$Weight)
-sd(data$Weight)
-min(data$Weight)
+mean(side$Weight)
+sd(side$Weight)
+min(side$Weight)
 
-tapply(data$Weight,data$fSite,mean)
-tapply(data$Weight,data$fSite,sd)
+tapply(side$Weight,side$fSite,mean)
+tapply(side$Weight,side$fSite,sd)
 
 # Normality test:
-shapiro.test(data$Weight) # Nao  normal
+shapiro.test(side$Weight) # Nao  normal
 
 # Homogeneity test:
-variancia <- tapply(data$Weight,data$fSite,var)
+variancia <- tapply(side$Weight,side$fSite,var)
 variancia
 
 # Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
@@ -469,33 +390,38 @@ variancia
 variancia [2]/ variancia [4]  # Buzios eh 1.83.66x maior...provavelmente homocedastico
 
 # Teste de Bartlett:
-bartlett.test(data$Weight ~ data$fSite) # H0 Aceitada (Homocedastico)
+bartlett.test(side$Weight ~ side$fSite) # H0 Aceitada (Homocedastico)
 
 # Teste de Fligner-Killeen:
-fligner.test(data$Weight ~ data$fSite) # H0 Aceitada (Homocedastico)
+fligner.test(side$Weight ~ side$fSite) # H0 Aceitada (Homocedastico)
 
 library(car)
-leveneTest(Weight ~ fSite, data=data, center=mean) # H0 Aceitada (Homocedastico)
+leveneTest(Weight ~ fSite, data=side, center=mean) # H0 Aceitada (Homocedastico)
 
 # Kruaskal-Wallis test:
 
 kruskal.test(Weight ~ Site,
-             data = data) # H0 aceita, nao diferenca entre praias
+             data = side) # H0 aceita, nao diferenca entre praias
 
 
 # ~ Boulder Area ####
-summary(macro$Area.total)
-mean(macro$Area.total)
-sd(macro$Area.total)
+summary(side$Boulder.area)
+mean(side$Boulder.area)
+sd(side$Boulder.area)
 
-tapply(data$Boulder.area,data$fSite,mean)
-tapply(data$Boulder.area,data$fSite,sd)
+tapply(side$Boulder.area,side$fSite,mean)
+tapply(side$Boulder.area,side$fSite,sd)
+
+
+lines(side$Boulder.area)
+hist(side$Boulder.area, prob = T)
+rug(side$Boulder.area)
 
 # Normality test:
-shapiro.test(macro$Area.total) # Nao  normal
+shapiro.test(side$Area.total) # Nao  normal
 
 # Homogeneity test:
-variancia <- tapply(macro$Area.total,macro$fSite,var)
+variancia <- tapply(side$Area.total,side$fSite,var)
 variancia
 
 # Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
@@ -504,33 +430,33 @@ variancia
 variancia [2]/ variancia [1]  # Buzios eh 3x maior...provavelmente homocedastico
 
 # Teste de Bartlett:
-bartlett.test(macro$Area.total ~ macro$fSite) # H0 rejeitada (Heterocedastico)
+bartlett.test(side$Area.total ~ side$fSite) # H0 rejeitada (Heterocedastico)
 
 # Teste de Fligner-Killeen:
-fligner.test(macro$Area.total ~ macro$fSite) # H0 aceita (Homocedastico)
+fligner.test(side$Area.total ~ side$fSite) # H0 aceita (Homocedastico)
 
 library(car)
-leveneTest(Area.total ~ fSite, data=macro, center=mean) # H0 aceita (Homocedastico)
+leveneTest(Area.total ~ fSite, data=side, center=mean) # H0 aceita (Homocedastico)
 
 # Kruaskal-Wallis test:
 
 kruskal.test(Area.total ~ Site,
-             data = macro) # H0 aceita, nao ha diferenca entre praias
+             data = side) # H0 aceita, nao ha diferenca entre praias
 
 
 # ~ Lateral Exposed area ####
-summary(macro$Area.lateral)
-mean(macro$Area.lateral)
-sd(macro$Area.lateral)
+summary(side$Area.lateral)
+mean(side$Area.lateral)
+sd(side$Area.lateral)
 
-tapply(macro$Area.lateral,macro$Site,mean)
-tapply(macro$Area.lateral,macro$fSite,sd)
+tapply(side$Area.lateral,side$Site,mean)
+tapply(side$Area.lateral,side$fSite,sd)
 
 # Normality test:
-shapiro.test(macro$Area.lateral) # Nao  normal
+shapiro.test(side$Area.lateral) # Nao  normal
 
 # Homogeneity test:
-variancia <- tapply(macro$Area.lateral,macro$fSite,var)
+variancia <- tapply(side$Area.lateral,side$fSite,var)
 variancia
 
 # Uma regra pratica eh que a maior variancia nao deve exceder de 3 a 4 vezes a
@@ -539,18 +465,18 @@ variancia
 variancia [2]/ variancia [4]
 
 # Teste de Bartlett:
-bartlett.test(macro$Area.lateral ~ macro$fSite) # H0 rejeitada (Heterocedastico)
+bartlett.test(side$Area.lateral ~ side$fSite) # H0 rejeitada (Heterocedastico)
 
 # Teste de Fligner-Killeen:
-fligner.test(macro$Area.lateral ~ macro$fSite) # H0 aceita (Homocedastico)
+fligner.test(side$Area.lateral ~ side$fSite) # H0 aceita (Homocedastico)
 
 library(car)
-leveneTest(Area.lateral ~ fSite, data=macro, center=mean) # H0 aceita (Homocedastico)
+leveneTest(Area.lateral ~ fSite, data=side, center=mean) # H0 aceita (Homocedastico)
 
 # Kruaskal-Wallis test:
 
 kruskal.test(Area.lateral ~ Site,
-             data = macro) # H0 aceita, nao ha diferenca entre praias
+             data = side) # H0 aceita, nao ha diferenca entre praias
 
 # ~Cov.Flu ####
 
@@ -1306,7 +1232,68 @@ tapply(macro$T.viri,macro$Site,sum)
 #   + Temp. X Wt.level (-0.32)
 
 
+# TABLE 1 ----
+install.packages("data.table")
+library(data.table)
+z <- as.data.table(iris)
+z <- z[, list(
+  data = list(.SD$Sepal.Length)
+), by = "Species"]
 
+
+
+library(flextable)
+library(tidyverse)
+library(officer)
+
+table1 <- read.csv("table1.csv", sep = ";")
+View(table1)
+
+set_flextable_defaults(
+  post_process_html = autofit,
+  post_process_pdf = autofit,
+  post_process_docx = autofit,
+  font.family = "Aptos"
+)
+
+ft <- flextable(table1) %>%
+  color(part = "footer", color = "#666666") %>%
+  set_caption(caption = as_paragraph(
+    as_b("Table I: "),
+    "Studies reporting chiton predators. The scientific names were used according to the currently accepted nomenclature in WoRMS.")
+  ) %>%
+  merge_v(j = 1 ) %>%
+  bold(part = "header", bold = TRUE) %>%
+  mk_par(
+    part = "body",
+    j = "Measurements",
+    i = 2,
+    value = as_paragraph(as_chunk("T"), as_sub("H20"))) %>%
+  mk_par(
+    part = "body",
+    j = "Measurements",
+    i = 11,
+    value = as_paragraph(as_chunk("T"), as_sub("H20"))
+  )
+
+ft
+
+
+
+
+%>%
+  italic(j = c(2:3)) %>%
+  bold(part = "header", bold = TRUE) %>%
+  bold(j = 1, i = ~ !is.na(Animals), bold = TRUE, part = "body") %>%
+  footnote(i = c(18,23,48), j = 4,
+           value = as_paragraph("Method not specified by original authors."),
+           ref_symbols = "*",
+           part = "body") %>%
+  align_text_col(align = "center", header = TRUE, footer = FALSE) %>%
+  merge_v(j = 1 ) %>%
+  hline(i = c(5,14,15,25,27,45,91,104), part = "body",
+        border = fp_border(color = "black", style = "dashed", width = 1))
+ft
 
 
 # PCA ####
